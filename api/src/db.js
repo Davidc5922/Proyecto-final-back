@@ -2,16 +2,38 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-  DB_USER, DB_PASSWORD, DB_HOST,
-} = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV = '' } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/users`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+let sequelize =
+  NODE_ENV === 'production'
+    ? new Sequelize(DATABASE_URL,{
+        database: 'd2qoblbukidquf',
+        dialect: 'postgres',
+        host: 'ec2-52-206-182-219.compute-1.amazonaws.com',
+        port: 5432,
+        username: 'ualijjydbrwnjx',
+        password:
+          '1ee05d86be2f20b4b5e00a15caa749eb75a27b28a9215129d4f4bb5c43a77366',
+        pool: {
+          max: 3,
+          min: 1,
+          idle: 10000,
+        },
+        dialectOptions: {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false,
+          },
+          keepAlive: true,
+        },
+        ssl: true,
+      })
+    : new Sequelize(
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+        { logging: false, native: false }
+      );
+
 const basename = path.basename(__filename);
-
 const modelDefiners = [];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
@@ -30,7 +52,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Dog } = sequelize.models;
+const { Users } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
