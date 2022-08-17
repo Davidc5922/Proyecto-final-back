@@ -7,13 +7,13 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV = '' } = process.env;
 let sequelize =
   NODE_ENV === 'production'
     ? new Sequelize(process.env.DATABASE_URL,{
-        database: 'df4v36l3j1ht02',
+        database: 'dfi62j8579bdlr',
         dialect: 'postgres',
-        host: 'ec2-52-207-15-147.compute-1.amazonaws.com',
+        host: 'ec2-44-208-88-195.compute-1.amazonaws.com',
         port: 5432,
-        username: 'gsnvqqkjncicqu',
+        username: 'alcxuckxfpobjq',
         password:
-          '3a805a80e5e7e94926359665e823f7855728bdb855b8d555402952dacd347e2c',
+          'fc19afe34c5042d66b696c9c0f06ebfea88b6eae711c2b17b83d00bcd0f06e83',
         pool: {
           max: 3,
           min: 1,
@@ -52,10 +52,12 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Users } = sequelize.models;
+const { Users,Product} = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
+// Product.belongsToMany(Users, {through: "users_product"})
+// Users.belongsToMany(Product, {through: "users_product"})
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
