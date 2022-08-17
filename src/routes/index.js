@@ -5,26 +5,18 @@ const { Router } = require('express');
 const {User,Product} = require("../db")
 
 const router = Router();
-const allInfo = require("./info.json")
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
+router.get("/", async (req,res)=>{
+
+    res.send("funciona :D")
+   
+})
+
 router.get("/products", async (req,res)=>{
 
-    // allInfo.hombres.calzado.map(async el => {
-    //     await Product.create({
-    //         name: el.name,
-    //         brand: el.marca,
-    //         price: el.precio,
-    //         stock: el.stock,
-    //         genre: el.genero,
-    //         image: el.img,
-    //         sold: el.vendido,
-    //         score: el.calificacion,
-    //     })
-    // });
-     
-     res.send("uwu")
+     res.send("ruta de prueba")
     
 })
 
