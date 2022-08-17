@@ -9,6 +9,9 @@ const {User} = require("../db")
 const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
+router.use(express.json())
+router.use('/users',users)
+const users = require('../controls/users.js')
 
 
 router.get("/", async (req,res)=>{
