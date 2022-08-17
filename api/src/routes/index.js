@@ -7,15 +7,7 @@ const router = Router();
 const allInfo = require("./info.json")
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.get('*',async(req, res,next) => {
-    try {
-        let list=await allInfo.hombres();
-        
-        res.status(200).send(list)
-    } catch (e) {
-        next(e);
-    }
-})
+
 module.exports = router;
 // id: {
 //     type: DataTypes.UUID,
