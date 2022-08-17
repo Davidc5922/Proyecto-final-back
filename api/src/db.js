@@ -7,13 +7,13 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV = '' } = process.env;
 let sequelize =
   NODE_ENV === 'production'
     ? new Sequelize(DATABASE_URL,{
-        database: 'd2qoblbukidquf',
+        database: 'df4v36l3j1ht02',
         dialect: 'postgres',
-        host: 'ec2-52-206-182-219.compute-1.amazonaws.com',
+        host: 'ec2-52-207-15-147.compute-1.amazonaws.com',
         port: 5432,
-        username: 'ualijjydbrwnjx',
+        username: 'gsnvqqkjncicqu',
         password:
-          '1ee05d86be2f20b4b5e00a15caa749eb75a27b28a9215129d4f4bb5c43a77366',
+          '3a805a80e5e7e94926359665e823f7855728bdb855b8d555402952dacd347e2c',
         pool: {
           max: 3,
           min: 1,
