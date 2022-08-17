@@ -4,9 +4,10 @@ const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV = '' } = process.env;
 
-let sequelize =
-  NODE_ENV === 'production'
-    ? new Sequelize(DATABASE_URL,{
+// let sequelize =
+//   NODE_ENV === 'production'
+//     ? 
+new Sequelize(DATABASE_URL,{
         database: 'df4v36l3j1ht02',
         dialect: 'postgres',
         host: 'ec2-52-207-15-147.compute-1.amazonaws.com',
@@ -28,10 +29,10 @@ let sequelize =
         },
         ssl: true,
       })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-        { logging: false, native: false }
-      );
+    // : new Sequelize(
+    //     `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+    //     { logging: false, native: false }
+    //   );
 
 const basename = path.basename(__filename);
 const modelDefiners = [];
