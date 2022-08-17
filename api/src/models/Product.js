@@ -20,11 +20,11 @@ module.exports = (sequelize) => {
 				allowNull: false
 			},
 			price: {
-				type: DataTypes.INTEGER,
+				type: DataTypes.FLOAT,
 				allowNull: false
 			},
 			stock: {
-				type: DataTypes.STRING,
+				type: DataTypes.INTEGER,
 				allowNull: false
 			},
 			image: {
@@ -36,11 +36,11 @@ module.exports = (sequelize) => {
 				allowNull: false
 			},
 			size: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.ARRAY(DataTypes.STRING),
+				allowNull: true
 			},
 			score: {
-				type: DataTypes.STRING,
+				type: DataTypes.FLOAT,
 				allowNull: false
 			},
 			genre: {

@@ -10,7 +10,7 @@
         "tipo": "calzado",
         "stock": 3,
         "vendido": 0,
-        "calificacion": 3,
+        "calificacion": 3.4,
         "talle": [37, 38, 39, 40, 41, 42, 43],
         "img": "https://essential.vtexassets.com/arquivos/ids/602027-800-auto?v=637956635991000000&width=800&height=auto&aspect=true"
       },
