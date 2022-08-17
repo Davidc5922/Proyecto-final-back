@@ -1,18 +1,18 @@
-const e = require('express');
+// const e = require('express');
 const { Router } = require('express');
 
 
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-const {User} = require("../db")
+// const {User} = require("../db")
 
 const router = Router();
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.use(express.json())
-router.use('/users',users)
-const users = require('../controls/users.js')
+// router.use(express.json())
+// router.use('/users',users)
+// const users = require('../controls/users.js')
 
 
 router.get("/", async (req,res)=>{
