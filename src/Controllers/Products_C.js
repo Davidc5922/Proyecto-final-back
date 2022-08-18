@@ -10,20 +10,13 @@ const preload = async () => {
 		{ name: 'campera' }
 	];
 	await Category.bulkCreate(categories);
-	// categories.forEach((e) => {
-	// 	Category.findOrCreate({
-	// 		where: {
-	// 			id: uuid.v4(),
-	// 			name: e.name
-	// 		}
-	// 	});
-	// });
-	let mapInfo = allInfo.map((p) => {
-		// const categoryDb = await Category.findAll({
-		// 		where: { name: p.category }
-		// 	});
-		// 	await newProduct.addCategory(categoryDb);
-		return {
+
+	allInfo.forEach(async (p) => {
+		let categoryDb = await Category.findOne({
+			where: { name: p.category }
+		});
+
+		await Product.create({
 			name: p.name,
 			brand: p.brand,
 			price: p.price,
@@ -32,12 +25,10 @@ const preload = async () => {
 			sold: p.sold,
 			size: p.size,
 			score: p.score,
-			genre: p.genre
-		};
+			genre: p.genre,
+			categoryId: categoryDb.id
+		});
 	});
-	await Product.bulkCreate(mapInfo);
-
-	// console.log(mapInfo);
 };
 
 module.exports = { preload };
