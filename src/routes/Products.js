@@ -1,57 +1,34 @@
 const { Router } = require('express');
 const uuid = require('uuid');
+const { filterByGenre, filterByCategory } = require('../Controllers/filters');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 // const { User, Product } = require('../db');
-
 const router = Router();
-const allInfo = require('./info.json');
-const { Product, Category } = require('../db.js');
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
 
-// const preload = async () => {
-// 	let categories = [
-// 		{ name: 'calzado' },
-// 		{ name: 'camiseta' },
-// 		{ name: 'buzo' },
-// 		{ name: 'pantalon' },
-// 		{ name: 'campera' }
-// 	];
-// 	await Category.bulkCreate(categories);
-// 	// categories.forEach((e) => {
-// 	// 	Category.findOrCreate({
-// 	// 		where: {
-// 	// 			id: uuid.v4(),
-// 	// 			name: e.name
-// 	// 		}
-// 	// 	});
-// 	// });
-// 	let mapInfo = allInfo.map(async (p) => {
-// 		// const categoryDb = await Category.findAll({
-// 		// 		where: { name: p.category }
-// 		// 	});
-// 		// 	await newProduct.addCategory(categoryDb);
-// 		return {
-// 			name: p.name,
-// 			brand: p.brand,
-// 			price: p.price,
-// 			stock: p.stock,
-// 			image: p.image,
-// 			sold: p.sold,
-// 			size: p.size,
-// 			score: p.score,
-// 			genre: p.genre
-// 		};
-// 	});
-// 	await Product.bulkCreate(mapInfo);
 
-// 	// console.log(mapInfo);
-// };
-
-router.get('/', async (req, res) => {
-	// await preload();
-	res.send('funciona :D');
+router.get('/genres/:genre', async (req, res) => {
+	try {
+		const {genre} = req.params
+		console.log(genre)
+	    const info = await filterByGenre(genre)
+        res.status(200).send(info)
+	} catch (error) {
+		res.status(400).send(error)
+	}
+	
 });
+
+router.get("/category/:category", async (req,res) => {
+	try {
+		const {category} = req.params;
+		console.log(category)
+        const info = await filterByCategory(category)
+        res.status(200).send(info)
+	} catch (e) {
+		res.status(400).send(e)
+	}
+})
+
 
 module.exports = router;
