@@ -16,36 +16,36 @@ module.exports = (sequelize) => {
 				allowNull: false
 			},
 			brand: {
-				type: DataTypes.STRING
-				// allowNull: false
+				type: DataTypes.STRING,
+				allowNull: false
 			},
 			price: {
-				type: DataTypes.FLOAT
-				// allowNull: false
+				type: DataTypes.FLOAT,
+				allowNull: false
 			},
 			stock: {
-				type: DataTypes.INTEGER
-				// allowNull: false
+				type: DataTypes.INTEGER,
+				allowNull: false
 			},
 			image: {
 				type: DataTypes.STRING,
 				allowNull: false
 			},
 			sold: {
-				type: DataTypes.INTEGER
-				// allowNull: false
+				type: DataTypes.INTEGER,
+				allowNull: false
 			},
 			size: {
-				type: DataTypes.ARRAY(DataTypes.STRING)
-				// allowNull: true
+				type: DataTypes.ARRAY(DataTypes.STRING),
+				allowNull: true
 			},
 			score: {
-				type: DataTypes.FLOAT
-				// allowNull: false
+				type: DataTypes.FLOAT,
+				allowNull: false
 			},
 			genre: {
-				type: DataTypes.STRING
-				// allowNull: false
+				type: DataTypes.STRING,
+				allowNull: false
 			}
 		},
 		{ timestamps: false }
