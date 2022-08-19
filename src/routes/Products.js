@@ -129,7 +129,7 @@ router.post('/', async (req, res, next) => {
 			genre,
 			categoryId: catId.id
 		});
-		res.status(200).send(newProduct);
+		res.status(200).json({ message: 'New Product Created!' });
 	} catch (e) {
 		next(e);
 	}
