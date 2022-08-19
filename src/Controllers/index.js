@@ -77,10 +77,20 @@ const filterBySize = async (size) => {
 }
 }
 
+const filterByBrand = async (brand) => {
+    try {
+        const allInfo = await Product.findAll();
+        const productsFilter = allInfo.filter(el => el.brand === brand);
+        return productsFilter;
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 module.exports = {
     filterByGenre,
     filterByCategory,
     getAllProducts,
-    filterBySize
+    filterBySize,
+    filterByBrand
 }
