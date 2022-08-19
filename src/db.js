@@ -71,8 +71,8 @@ Product.belongsToMany(Buy, { through: 'Products_Buys' });
 Buy.belongsToMany(Product, { through: 'Products_Buys' });
 
 
-// Category.hasMany(Product);
-// Product.belongsTo(Category);
+Category.hasMany(Product);
+Product.belongsTo(Category);
 
 // User.hasMany(Buy);
 // Buy.belongsTo(User);

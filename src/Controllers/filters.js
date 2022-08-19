@@ -1,13 +1,21 @@
-const {Product} = require("../db")
+const {Product,Category} = require("../db")
 
 const filterByCategory = async (category) => {
- try {
-    const allInfo = await Product.findAll();
-    const filter = allInfo.filter(e => e.category===category)
-      return filter;
- } catch (e) {
+//  try {
+//      const categoryId = await Category.findOne({
+//          where: {name : category},
+//          include:[{
+//             attributes: ["name"],
+//             through: {
+//               attributes: [],
+//             },
+//        }]
+//      })
+//     console.log(categoryId)
+
+//  } catch (e) {
     
- }
+//  }
 }
 
 const filterByGenre = async (genre) => {
