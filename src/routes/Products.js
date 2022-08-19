@@ -65,17 +65,26 @@ router.get("/size/:size",async (req,res)=>{
   }
 })
 
-router.get('/:id',async(req, res,next) => {
-  const { Id } = req.params;
+router.get('/:Id',async(req, res,next) => {
+  try {
+    const { Id } = req.params;
   console.log(Id)
   if (Id) {
       let product = await Product.findByPk(Id);
- 
-          res.status(200).json(product) 
+        if(product){
+           return res.status(200).json(product) 
+        }
+        else{
+          return res.send("no encontrado")
+        }
          
   } 
+  
+  } catch (error) {
+    res.send(error)
+  }
 })
-router.delete("/:id", async function (req, res) {
+router.delete("/delete/:id", async function (req, res) {
   const { id } = req.params;
   try {
     if (id) {
