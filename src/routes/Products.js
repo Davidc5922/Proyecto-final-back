@@ -80,7 +80,16 @@ router.get('/size/:size', async (req, res) => {
 	}
 });
 
-
+router.get("/brand/:brand", async (req,res) => {
+  try {
+    const {brand} = req.params;
+     const allInfo = await getAllProducts();
+     const infoFilter = allInfo.filter(el => el.brand === brand)
+     res.status(200).send(infoFilter)
+  } catch (e) {
+    res.send(e);
+  }
+})
 router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
