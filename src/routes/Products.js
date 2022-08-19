@@ -6,6 +6,7 @@ const {
   filterByCategory,
   getAllProducts,
   filterBySize,
+  filterByBrand,
 } = require("../Controllers");
 const { Product, Category, User } = require("../db.js");
 // Importar todos los routers;
@@ -76,6 +77,16 @@ router.get("/size/:size", async (req, res) => {
     res.status(400).send(error);
   }
 });
+
+router.get("/brand/:brand", async (req,res)=>{
+  try {
+      const {brand} = req.params;
+      const info = await filterByBrand(brand);
+      res.status(200).send(info)
+  } catch (error) {
+    res.send(error)
+  }
+})
 
 router.get("/:id", async (req, res, next) => {
   const { id } = req.params;
