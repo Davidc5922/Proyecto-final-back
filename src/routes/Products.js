@@ -1,7 +1,5 @@
 const { Router } = require('express');
 
-const uuid = require('uuid');
-
 const {
 	filterByGenre,
 	filterByCategory,
@@ -9,11 +7,10 @@ const {
 	filterBySize
 } = require('../Controllers');
 
-// const allInfo = require('./info.json');
 const { Product, Category, User } = require('../db.js');
+
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-// const { User, Product } = require('../db');
 const router = Router();
 
 router.get('/', async (req, res, next) => {
@@ -80,27 +77,28 @@ router.get('/size/:size', async (req, res) => {
 	}
 });
 
-router.get('/:Id', async (req, res, next) => {
-	const { Id } = req.params;
-	console.log(Id);
-	if (Id) {
-		let product = await Product.findByPk(Id);
-		let product_ID = product.map((e) => {
-			return {
-				name: e.name,
-				brand: e.brand,
-				price: e.price,
-				stock: e.stock,
-				image: e.image,
-				sold: e.sold,
-				size: e.size,
-				score: e.score,
-				genre: e.genre
-			};
-		});
-		res.status(200).json(product_ID);
+router.get('/:id', async (req, res, next) => {
+	const { id } = req.params;
+	try {
+		if (id) {
+			let productDetail = await Product.findByPk(id);
+			if (productDetail) {
+				let categoryDb = await Category.findByPk(productDetail.categoryId);
+				const concatProduct = {
+					...productDetail.dataValues,
+					categoryName: categoryDb.name
+				};
+				res.status(200).json(concatProduct);
+			} else {
+				return res.status(200).json({ message: 'ID not found' });
+			}
+		}
+	} catch (error) {
+		next(error);
 	}
+	// console.log(id);
 });
+
 router.delete('/:id', async function (req, res) {
 	const { id } = req.params;
 	try {
