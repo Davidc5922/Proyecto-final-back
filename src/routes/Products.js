@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const uuid = require('uuid');
-const { filterByGenre, filterByCategory } = require('../Controllers/filters');
+const { filterByGenre, filterByCategory, getAllProducts, filterBySize } = require('../Controllers');
 // const allInfo = require('./info.json');
 // const { Product, Category } = require('../db.js');
 // Importar todos los routers;
@@ -8,13 +8,27 @@ const { filterByGenre, filterByCategory } = require('../Controllers/filters');
 // const { User, Product } = require('../db');
 const router = Router();
 
+router.get("/", async (req,res) => {
+  try {
+     const allInfo = await getAllProducts();
+     res.status(200).send(allInfo)
+  } catch (e) {
+     res.status(400).send(e)
+  }
+})
 
 router.get('/genres/:genre', async (req, res) => {
 	try {
 		const {genre} = req.params
-		console.log(genre)
-	    const info = await filterByGenre(genre)
-        res.status(200).send(info)
+    if(genre === "hombre" || genre === "mujer"){
+        const info = await filterByGenre(genre)
+           return res.status(200).send(info)
+    }
+    else{
+      const allInfo = await getAllProducts()
+      res.send( allInfo)
+    }
+	    
 	} catch (error) {
 		res.status(400).send(error)
 	}
@@ -24,12 +38,30 @@ router.get('/genres/:genre', async (req, res) => {
 router.get("/category/:category", async (req,res) => {
 	try {
 		const {category} = req.params;
-		console.log(category)
+    if(category === "campera" || category === "calzado" || category === "buzo" || category === "pantalon" || category === "camiseta" ){
         const info = await filterByCategory(category)
-        res.status(200).send(info)
+         return res.status(200).send(info)
+    }
+		else{
+      const allInfo = await getAllProducts()
+      res.send( allInfo)
+    }
+      
 	} catch (e) {
 		res.status(400).send(e)
 	}
+})
+router.get("/size/:size",async (req,res)=>{
+  try {
+        const {size} = req.params;
+        console.log(size)
+        const info = await filterBySize(size);
+        res.send(info)
+
+    
+  } catch (error) {
+    res.status(400).send(error)
+  }
 })
 
 router.get('/:Id',async(req, res,next) => {
