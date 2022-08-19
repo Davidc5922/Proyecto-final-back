@@ -1,39 +1,83 @@
 const { Router } = require('express');
-const { Product, Category } = require('../db.js');
 
+const uuid = require('uuid');
+const {
+	filterByGenre,
+	filterByCategory,
+	getAllProducts
+} = require('../Controllers');
+// const allInfo = require('./info.json');
+// const { Product, Category } = require('../db.js');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-
+// const { User, Product } = require('../db');
 const router = Router();
 
-router.get('/', async (req, res, next) => {
+router.get('/', async (req, res) => {
 	try {
-		return res.send('Funciona');
-	} catch (error) {}
+		const allInfo = await getAllProducts();
+		res.status(200).send(allInfo);
+	} catch (e) {
+		res.status(400).send(e);
+	}
+});
+
+router.get('/genres/:genre', async (req, res) => {
+	try {
+		const { genre } = req.params;
+		if (genre === 'hombre' || genre === 'mujer') {
+			const info = await filterByGenre(genre);
+			return res.status(200).send(info);
+		} else {
+			const allInfo = await getAllProducts();
+			res.send(allInfo);
+		}
+	} catch (error) {
+		res.status(400).send(error);
+	}
+});
+
+router.get('/category/:category', async (req, res) => {
+	try {
+		const { category } = req.params;
+		if (
+			category === 'campera' ||
+			category === 'calzado' ||
+			category === 'buzo' ||
+			category === 'pantalon' ||
+			category === 'camiseta'
+		) {
+			const info = await filterByCategory(category);
+			return res.status(200).send(info);
+		} else {
+			const allInfo = await getAllProducts();
+			res.send(allInfo);
+		}
+	} catch (e) {
+		res.status(400).send(e);
+	}
 });
 
 router.get('/:Id', async (req, res, next) => {
-	const { id } = req.params;
-	console.log(id);
-	try {
-		if (id) {
-			let product = await Product.findByPk(id);
-			let product_ID = product.map((e) => {
-				return {
-					name: e.name,
-					brand: e.brand,
-					price: e.price,
-					stock: e.stock,
-					image: e.image,
-					sold: e.sold,
-					size: e.size,
-					score: e.score,
-					genre: e.genre
-				};
-			});
-			res.status(200).json(product_ID);
-		}
-	} catch (error) {}
+	const { Id } = req.params;
+	console.log(Id);
+	if (Id) {
+		let product = await Product.findByPk(Id);
+		let product_ID = product.map((e) => {
+			return {
+				name: e.name,
+				brand: e.brand,
+				price: e.price,
+				stock: e.stock,
+				image: e.image,
+				sold: e.sold,
+				size: e.size,
+				score: e.score,
+				genre: e.genre
+			};
+		});
+		res.status(200).json(product_ID);
+	}
 });
 router.delete('/:id', async function (req, res) {
 	const { id } = req.params;
@@ -70,4 +114,5 @@ router.post('*', async (req, res, next) => {
 		next(e);
 	}
 });
+
 module.exports = router;
