@@ -2,8 +2,6 @@ const e = require("express");
 const {Product,Category} = require("../db")
 
 
-
-
 const getAllProducts = async function(){
     try {
         const allInfo = await Product.findAll()
