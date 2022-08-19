@@ -1,7 +1,20 @@
 const {Product,Category} = require("../db")
 
+
+
+
+const getAllProducts = async function(){
+    try {
+        const allInfo = await Product.findAll();
+        return allInfo;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const filterByCategory = async (category) => {
  try {
+     
      const Id = await Category.findOne({
          where: {name : category},
      })
@@ -28,5 +41,6 @@ const filterByGenre = async (genre) => {
 
 module.exports = {
     filterByGenre,
-    filterByCategory
+    filterByCategory,
+    getAllProducts
 }
