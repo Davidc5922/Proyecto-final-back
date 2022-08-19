@@ -64,7 +64,7 @@ router.get("/size/:size",async (req,res)=>{
   }
 })
 
-router.get('/products/:Id',async(req, res,next) => {
+router.get('/:Id',async(req, res,next) => {
   const { Id } = req.params;
   console.log(Id)
   if (Id) {
