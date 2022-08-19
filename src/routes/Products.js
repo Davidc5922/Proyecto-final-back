@@ -1,16 +1,16 @@
 const { Router } = require('express');
 
+const uuid = require('uuid');
 const {
 	filterByGenre,
 	filterByCategory,
 	getAllProducts,
 	filterBySize
 } = require('../Controllers');
-
 const { Product, Category, User } = require('../db.js');
-
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
+
 const router = Router();
 
 router.get('/', async (req, res, next) => {
@@ -96,10 +96,8 @@ router.get('/:id', async (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
-	// console.log(id);
 });
-
-router.delete('/:id', async function (req, res) {
+router.delete('/delete/:id', async function (req, res) {
 	const { id } = req.params;
 	try {
 		if (id) {
