@@ -5,7 +5,7 @@ const { filterByGenre, filterByCategory, getAllProducts, filterBySize } = requir
 // const { Product, Category } = require('../db.js');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-// const { User, Product } = require('../db');
+const { User, Product } = require('../db');
 const router = Router();
 
 router.get("/", async (req,res) => {
@@ -64,7 +64,7 @@ router.get("/size/:size",async (req,res)=>{
   }
 })
 
-router.get('/:Id',async(req, res,next) => {
+router.get('/products/:Id',async(req, res,next) => {
   const { Id } = req.params;
   console.log(Id)
   if (Id) {
