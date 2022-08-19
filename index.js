@@ -19,10 +19,16 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-
+const { PORT } = process.env;
+const { Product } = require('./src/db.js');
+const { preload } = require('./src/Controllers/Products_C.js');
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
+conn.sync({ force: true }).then(async () => {
+	const allInfo = await Product.findAll();
+	if (!allInfo.length) {
+		await preload();
+	}
+	server.listen(PORT, () => {
+		console.log(`%s listening at ${process.env.PORT}`); // eslint-disable-line no-console
+	});
 });
