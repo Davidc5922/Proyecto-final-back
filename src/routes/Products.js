@@ -117,7 +117,7 @@ router.post('/', async (req, res, next) => {
 
 	try {
 		let catId = await Category.findOne({ where: { name: category } });
-		let newProduct = await Product.create({
+		await Product.create({
 			name,
 			brand,
 			price,
