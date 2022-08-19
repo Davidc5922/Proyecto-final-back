@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const uuid = require('uuid');
 const { filterByGenre, filterByCategory, getAllProducts, filterBySize } = require('../Controllers');
-const { User, Product } = require('../db');
+const { User, Product, Category } = require('../db');
 // const allInfo = require('./info.json');
 // const { Product, Category } = require('../db.js');
 // Importar todos los routers;
@@ -71,8 +71,22 @@ router.get('/:Id',async(req, res,next) => {
   console.log(Id)
   if (Id) {
       let product = await Product.findByPk(Id);
+       let categoryName = await Category.findByPk(product.categoryId)
+        let finalProduct = {
+         name: product.name,
+         brand: product.brand,
+         price: product.price,
+         stock: product.stock,
+         image: product.image,
+         sold:  product.sold,
+         size:  product.size,
+         score: product.score,
+         genre: product.genre,
+         category: categoryName.name,
+         categoryId: product.categoryId
+        }
         if(product){
-           return res.status(200).json(product) 
+           return res.status(200).json(finalProduct) 
         }
         else{
           return res.send("no encontrado")
