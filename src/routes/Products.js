@@ -6,30 +6,34 @@ const { Product, Category } = require('../db.js');
 
 const router = Router();
 
-router.get('/', async (req, res) => {
-	return res.send('Funciona');
+router.get('/', async (req, res, next) => {
+	try {
+		return res.send('Funciona');
+	} catch (error) {}
 });
 
 router.get('/:Id', async (req, res, next) => {
-	const { Id } = req.params;
-	console.log(Id);
-	if (Id) {
-		let product = await Product.findByPk(Id);
-		let product_ID = product.map((e) => {
-			return {
-				name: e.name,
-				brand: e.brand,
-				price: e.price,
-				stock: e.stock,
-				image: e.image,
-				sold: e.sold,
-				size: e.size,
-				score: e.score,
-				genre: e.genre
-			};
-		});
-		res.status(200).json(product_ID);
-	}
+	const { id } = req.params;
+	console.log(id);
+	try {
+		if (id) {
+			let product = await Product.findByPk(id);
+			let product_ID = product.map((e) => {
+				return {
+					name: e.name,
+					brand: e.brand,
+					price: e.price,
+					stock: e.stock,
+					image: e.image,
+					sold: e.sold,
+					size: e.size,
+					score: e.score,
+					genre: e.genre
+				};
+			});
+			res.status(200).json(product_ID);
+		}
+	} catch (error) {}
 });
 router.delete('/:id', async function (req, res) {
 	const { id } = req.params;
