@@ -1,11 +1,12 @@
 const { Router } = require('express');
 const uuid = require('uuid');
 const { filterByGenre, filterByCategory, getAllProducts, filterBySize } = require('../Controllers');
+const { User, Product, Category } = require('../db');
 // const allInfo = require('./info.json');
 // const { Product, Category } = require('../db.js');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
-// const { User, Product } = require('../db');
+
 const router = Router();
 
 router.get("/", async (req,res) => {
@@ -65,30 +66,39 @@ router.get("/size/:size",async (req,res)=>{
 })
 
 router.get('/:Id',async(req, res,next) => {
-  const { Id } = req.params;
+  try {
+    const { Id } = req.params;
   console.log(Id)
   if (Id) {
       let product = await Product.findByPk(Id);
-  let product_ID = product.map(e=>{
-    return {
-      name:e.name,
-      brand:e.brand,
-      price:e.price,
-      stock:e.stock,
-      image:e.image,
-      sold:e.sold,
-      size:e.size,
-      score:e.score,
-      genre:e.genre
-    }
-
-
-  })
-          res.status(200).json(product_ID) 
+       let categoryName = await Category.findByPk(product.categoryId)
+        let finalProduct = {
+         name: product.name,
+         brand: product.brand,
+         price: product.price,
+         stock: product.stock,
+         image: product.image,
+         sold:  product.sold,
+         size:  product.size,
+         score: product.score,
+         genre: product.genre,
+         category: categoryName.name,
+         categoryId: product.categoryId
+        }
+        if(product){
+           return res.status(200).json(finalProduct) 
+        }
+        else{
+          return res.send("no encontrado")
+        }
          
   } 
+  
+  } catch (error) {
+    res.send(error)
+  }
 })
-router.delete("/:id", async function (req, res) {
+router.delete("/delete/:id", async function (req, res) {
   const { id } = req.params;
   try {
     if (id) {
