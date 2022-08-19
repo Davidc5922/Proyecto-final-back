@@ -2,7 +2,7 @@ const { Router } = require('express');
 const uuid = require('uuid');
 const { filterByGenre, filterByCategory, getAllProducts, filterBySize } = require('../Controllers');
 // const allInfo = require('./info.json');
-// const { Product, Category } = require('../db.js');
+const { Product, Category,User } = require('../db.js');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 // const { User, Product } = require('../db');
