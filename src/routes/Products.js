@@ -13,12 +13,21 @@ const {
 // const { User, Product } = require('../db');
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
+	const { name } = req.query;
 	try {
-		const allInfo = await getAllProducts();
-		res.status(200).send(allInfo);
-	} catch (e) {
-		res.status(400).send(e);
+		let allInfo = await getAllProducts();
+		if (name) {
+			const filterProducts = allInfo.filter((e) =>
+				e.name.toLowerCase().includes(name.toString().toLowerCase())
+			);
+			if (filterProducts.length) {
+				return res.json(filterProducts);
+			}
+		}
+		return res.json(allInfo);
+	} catch (error) {
+		next(error);
 	}
 });
 
