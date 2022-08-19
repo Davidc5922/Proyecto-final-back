@@ -1,13 +1,16 @@
 const { Router } = require('express');
 
 const uuid = require('uuid');
+
 const {
 	filterByGenre,
 	filterByCategory,
-	getAllProducts
+	getAllProducts,
+	filterBySize
 } = require('../Controllers');
+
 // const allInfo = require('./info.json');
-// const { Product, Category } = require('../db.js');
+const { Product, Category, User } = require('../db.js');
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 // const { User, Product } = require('../db');
@@ -64,6 +67,16 @@ router.get('/category/:category', async (req, res) => {
 		}
 	} catch (e) {
 		res.status(400).send(e);
+	}
+});
+router.get('/size/:size', async (req, res) => {
+	try {
+		const { size } = req.params;
+		console.log(size);
+		const info = await filterBySize(size);
+		res.send(info);
+	} catch (error) {
+		res.status(400).send(error);
 	}
 });
 
