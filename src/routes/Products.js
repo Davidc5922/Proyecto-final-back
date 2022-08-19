@@ -2,12 +2,15 @@ const { Router } = require('express');
 
 const uuid = require('uuid');
 const {
-	filterByGenre,
-	filterByCategory,
-	getAllProducts,
-	filterBySize
-} = require('../Controllers');
-const { Product, Category, User } = require('../db.js');
+
+  filterByGenre,
+  filterByCategory,
+  getAllProducts,
+  filterBySize,
+  filterByBrand,
+} = require("../Controllers");
+const { Product, Category, User } = require("../db.js");
+
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
@@ -77,6 +80,7 @@ router.get('/size/:size', async (req, res) => {
 	}
 });
 
+
 router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
@@ -96,6 +100,7 @@ router.get('/:id', async (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
+
 });
 router.delete('/delete/:id', async function (req, res) {
 	const { id } = req.params;
