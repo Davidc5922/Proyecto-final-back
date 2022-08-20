@@ -2,14 +2,13 @@ const { Router } = require('express');
 
 const uuid = require('uuid');
 const {
-
-  filterByGenre,
-  filterByCategory,
-  getAllProducts,
-  filterBySize,
-  filterByBrand,
-} = require("../Controllers");
-const { Product, Category, User } = require("../db.js");
+	filterByGenre,
+	filterByCategory,
+	getAllProducts,
+	filterBySize,
+	filterByBrand
+} = require('../Controllers');
+const { Product, Category, User } = require('../db.js');
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
@@ -52,13 +51,7 @@ router.get('/genres/:genre', async (req, res) => {
 router.get('/category/:category', async (req, res) => {
 	try {
 		const { category } = req.params;
-		if (
-			category === 'campera' ||
-			category === 'calzado' ||
-			category === 'buzo' ||
-			category === 'pantalon' ||
-			category === 'camiseta'
-		) {
+		if (category) {
 			const info = await filterByCategory(category);
 			return res.status(200).send(info);
 		} else {
@@ -69,10 +62,11 @@ router.get('/category/:category', async (req, res) => {
 		res.status(400).send(e);
 	}
 });
+
 router.get('/size/:size', async (req, res) => {
 	try {
 		const { size } = req.params;
-		console.log(size);
+
 		const info = await filterBySize(size);
 		res.send(info);
 	} catch (error) {
@@ -80,16 +74,17 @@ router.get('/size/:size', async (req, res) => {
 	}
 });
 
-router.get("/brand/:brand", async (req,res) => {
-  try {
-    const {brand} = req.params;
-     const allInfo = await getAllProducts();
-     const infoFilter = allInfo.filter(el => el.brand === brand)
-     res.status(200).send(infoFilter)
-  } catch (e) {
-    res.send(e);
-  }
-})
+router.get('/brand/:brand', async (req, res) => {
+	try {
+		const { brand } = req.params;
+		const allInfo = await getAllProducts();
+		const infoFilter = allInfo.filter((el) => el.brand === brand);
+		res.status(200).send(infoFilter);
+	} catch (e) {
+		res.send(e);
+	}
+});
+
 router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
@@ -109,8 +104,8 @@ router.get('/:id', async (req, res, next) => {
 	} catch (error) {
 		next(error);
 	}
-
 });
+
 router.delete('/delete/:id', async function (req, res) {
 	const { id } = req.params;
 	try {
@@ -131,7 +126,7 @@ router.post('/', async (req, res, next) => {
 
 	try {
 		let catId = await Category.findOne({ where: { name: category } });
-		let newProduct = await Product.create({
+		await Product.create({
 			name,
 			brand,
 			price,
