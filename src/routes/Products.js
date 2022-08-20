@@ -51,13 +51,7 @@ router.get('/genres/:genre', async (req, res) => {
 router.get('/category/:category', async (req, res) => {
 	try {
 		const { category } = req.params;
-		if (
-			category === 'campera' ||
-			category === 'calzado' ||
-			category === 'buzo' ||
-			category === 'pantalon' ||
-			category === 'camiseta'
-		) {
+		if (category) {
 			const info = await filterByCategory(category);
 			return res.status(200).send(info);
 		} else {
@@ -68,10 +62,11 @@ router.get('/category/:category', async (req, res) => {
 		res.status(400).send(e);
 	}
 });
+
 router.get('/size/:size', async (req, res) => {
 	try {
 		const { size } = req.params;
-		console.log(size);
+
 		const info = await filterBySize(size);
 		res.send(info);
 	} catch (error) {
@@ -89,6 +84,7 @@ router.get('/brand/:brand', async (req, res) => {
 		res.send(e);
 	}
 });
+
 router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
@@ -109,6 +105,7 @@ router.get('/:id', async (req, res, next) => {
 		next(error);
 	}
 });
+
 router.delete('/delete/:id', async function (req, res) {
 	const { id } = req.params;
 	try {
