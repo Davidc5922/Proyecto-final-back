@@ -33,7 +33,7 @@ router.get('/', async (req, res, next) => {
 	}
 });
 
-router.get('/genres', async (req, res) => {
+router.get('/genres/:genre', async (req, res) => {
 	try {
 		const { genre } = req.params;
 		
@@ -75,7 +75,6 @@ router.get('/brand/:brand', async (req, res) => {
 	try {
 		const { brand } = req.params;
 		const allInfo = await filterByBrand(brand);
-		const infoFilter = 
 		res.status(200).send(allInfo);
 	} catch (e) {
 		res.send(e);
