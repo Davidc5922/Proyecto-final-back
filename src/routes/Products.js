@@ -1,12 +1,12 @@
 const { Router } = require('express');
 
-const uuid = require('uuid');
 const {
 	filterByGenre,
 	filterByCategory,
 	getAllProducts,
 	filterBySize,
-	filterByBrand
+	filterByBrand,
+	filterByName
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
 
@@ -16,18 +16,32 @@ const { Product, Category, User } = require('../db.js');
 const router = Router();
 
 router.get('/', async (req, res, next) => {
-	const { name } = req.query;
+	const { name, genre, category, size, brand } = req.query;
 	try {
-		let allInfo = await getAllProducts();
-		if (name) {
-			const filterProducts = allInfo.filter((e) =>
-				e.name.toLowerCase().includes(name.toString().toLowerCase())
-			);
-			if (filterProducts.length) {
-				return res.json(filterProducts);
+		const allProducts = await getAllProducts();
+
+		if (name || genre || category || size || brand) {
+			var info;
+			if (name) {
+				info = await filterByName(name);
 			}
+			if (genre) {
+				info = await filterByGenre(genre);
+			}
+			if (category) {
+				info = await filterByCategory(category);
+			}
+			if (size) {
+				info = await filterBySize(size);
+			}
+			if (brand) {
+				info = await filterByBrand(brand);
+			}
+
+			return res.status(200).send(info);
+		} else {
+			return res.json(allProducts);
 		}
-		return res.json(allInfo);
 	} catch (error) {
 		next(error);
 	}
