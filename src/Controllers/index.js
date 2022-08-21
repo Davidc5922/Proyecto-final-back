@@ -9,7 +9,8 @@ const getAllProducts = async function () {
 			id: el.id,
 			name: el.name,
 			price: el.price,
-			image: el.image
+			image: el.image,
+			price: el.price
 		}));
 	} catch (error) {}
 };
@@ -27,7 +28,8 @@ const filterByCategory = async (category) => {
 			id: el.id,
 			name: el.name,
 			brand: el.brand,
-			image: el.image
+			image: el.image,
+			price: el.price
 		}));
 	} catch (e) {}
 };
@@ -40,7 +42,8 @@ const filterByGenre = async (genre) => {
 			id: el.id,
 			name: el.name,
 			brand: el.brand,
-			image: el.image
+			image: el.image,
+			price: el.price
 		}));
 	} catch (e) {
 		console.log(e);
@@ -57,7 +60,8 @@ const filterBySize = async (size) => {
 			id: el.id,
 			name: el.name,
 			brand: el.brand,
-			image: el.image
+			image: el.image,
+			price: el.price
 		}));
 	} else {
 		const infoFilter = AllProducts.filter((el) =>
@@ -67,7 +71,8 @@ const filterBySize = async (size) => {
 			id: el.id,
 			name: el.name,
 			brand: el.brand,
-			image: el.image
+			image: el.image,
+			price: el.price
 		}));
 	}
 };
@@ -76,7 +81,13 @@ const filterByBrand = async (brand) => {
 	try {
 		const allInfo = await Product.findAll();
 		const productsFilter = allInfo.filter((el) => el.brand === brand);
-		return productsFilter;
+		return productsFilter.map((el) => ({
+			id: el.id,
+			name: el.name,
+			brand: el.brand,
+			image: el.image,
+			price: el.price
+		}));
 	} catch (error) {}
 };
 
