@@ -33,17 +33,14 @@ router.get('/', async (req, res, next) => {
 	}
 });
 
-router.get('/genres/:genre', async (req, res) => {
+router.get('/genres', async (req, res) => {
 	try {
 		const { genre } = req.params;
-		if (genre === 'hombre' || genre === 'mujer') {
-			const info = await filterByGenre(genre);
-			return res.status(200).send(info);
-		} else {
-			const allInfo = await getAllProducts();
-			res.send(allInfo);
-		}
-	} catch (error) {
+		
+			const allInfo = await filterByGenre(genre)
+		  return res.send(allInfo)
+	
+		}catch (error) {
 		res.status(400).send(error);
 	}
 });
@@ -77,9 +74,9 @@ router.get('/size/:size', async (req, res) => {
 router.get('/brand/:brand', async (req, res) => {
 	try {
 		const { brand } = req.params;
-		const allInfo = await getAllProducts();
-		const infoFilter = allInfo.filter((el) => el.brand === brand);
-		res.status(200).send(infoFilter);
+		const allInfo = await filterByBrand(brand);
+		const infoFilter = 
+		res.status(200).send(allInfo);
 	} catch (e) {
 		res.send(e);
 	}
