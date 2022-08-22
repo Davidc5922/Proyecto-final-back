@@ -50,11 +50,10 @@ router.get('/', async (req, res, next) => {
 router.get('/genres/:genre', async (req, res) => {
 	try {
 		const { genre } = req.params;
-		
-			const allInfo = await filterByGenre(genre)
-		  return res.send(allInfo)
-	
-		}catch (error) {
+
+		const allInfo = await filterByGenre(genre);
+		return res.send(allInfo);
+	} catch (error) {
 		res.status(400).send(error);
 	}
 });
@@ -133,19 +132,18 @@ router.delete('/delete/:id', async function (req, res) {
 router.post('/', async (req, res, next) => {
 	let { name, brand, price, stock, image, sold, size, score, genre, category } =
 		req.body;
-
 	try {
 		let catId = await Category.findOne({ where: { name: category } });
 		await Product.create({
-			name,
-			brand,
-			price,
-			stock,
-			image,
-			sold,
-			size,
-			score,
-			genre,
+			name: name,
+			brand: brand,
+			price: parseFloat(price),
+			stock: parseInt(stock),
+			image: image,
+			sold: parseInt(sold),
+			size: size,
+			score: parseFloat(score),
+			genre: genre,
 			categoryId: catId.id
 		});
 		res.status(200).json({ message: 'New Product Created!' });
