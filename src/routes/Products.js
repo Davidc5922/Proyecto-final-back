@@ -10,9 +10,6 @@ const {
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
 
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
 const router = Router();
 
 router.get('/', async (req, res, next) => {
@@ -50,11 +47,10 @@ router.get('/', async (req, res, next) => {
 router.get('/genres/:genre', async (req, res) => {
 	try {
 		const { genre } = req.params;
-		
-			const allInfo = await filterByGenre(genre)
-		  return res.send(allInfo)
-	
-		}catch (error) {
+
+		const allInfo = await filterByGenre(genre);
+		return res.send(allInfo);
+	} catch (error) {
 		res.status(400).send(error);
 	}
 });
