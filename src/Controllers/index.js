@@ -14,6 +14,7 @@ const getAllProducts = async function () {
 			categoryId: el.categoryId,
 			size: el.size,
 			brand: el.brand
+
 		}));
 		return currentInfo;
 	} catch (e) {
@@ -79,6 +80,7 @@ const filterByBrand = async (brand) => {
 	} catch (e) {
 		console.log(`Error function filterByBrand: ${e}`);
 	}
+
 };
 
 module.exports = {
