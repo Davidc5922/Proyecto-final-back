@@ -36,6 +36,17 @@ module.exports = (sequelize) => {
 			location: {
 				type: DataTypes.STRING,
 				allowNull: false
+			},
+			admin: {
+               type:  DataTypes.BOOLEAN,
+			   defaultValue: false,
+			  allowNull: true
+			},
+			ban: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false,
+				allowNull: true
+		
 			}
 		},
 		{ timestamps: false }

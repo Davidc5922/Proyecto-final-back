@@ -10,9 +10,6 @@ const {
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
 
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
-
 const router = Router();
 
 router.get('/', async (req, res, next) => {
@@ -44,53 +41,6 @@ router.get('/', async (req, res, next) => {
 		}
 	} catch (error) {
 		next(error);
-	}
-});
-
-router.get('/genres/:genre', async (req, res) => {
-	try {
-		const { genre } = req.params;
-
-		const allInfo = await filterByGenre(genre);
-		return res.send(allInfo);
-	} catch (error) {
-		res.status(400).send(error);
-	}
-});
-
-router.get('/category/:category', async (req, res) => {
-	try {
-		const { category } = req.params;
-		if (category) {
-			const info = await filterByCategory(category);
-			return res.status(200).send(info);
-		} else {
-			const allInfo = await getAllProducts();
-			res.send(allInfo);
-		}
-	} catch (e) {
-		res.status(400).send(e);
-	}
-});
-
-router.get('/size/:size', async (req, res) => {
-	try {
-		const { size } = req.params;
-
-		const info = await filterBySize(size);
-		res.send(info);
-	} catch (error) {
-		res.status(400).send(error);
-	}
-});
-
-router.get('/brand/:brand', async (req, res) => {
-	try {
-		const { brand } = req.params;
-		const allInfo = await filterByBrand(brand);
-		res.status(200).send(allInfo);
-	} catch (e) {
-		res.send(e);
 	}
 });
 
