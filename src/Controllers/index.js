@@ -14,8 +14,8 @@ const getAllProducts = async function () {
 			categoryId: el.categoryId,
 			size: el.size,
 			brand: el.brand
-
 		}));
+		console.log(currentInfo.length);
 		return currentInfo;
 	} catch (e) {
 		console.log(`Error function getAllProducts: ${e}`);
@@ -80,7 +80,6 @@ const filterByBrand = async (brand) => {
 	} catch (e) {
 		console.log(`Error function filterByBrand: ${e}`);
 	}
-
 };
 
 module.exports = {
