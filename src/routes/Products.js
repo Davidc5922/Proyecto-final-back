@@ -102,4 +102,10 @@ router.post('/', async (req, res, next) => {
 	}
 });
 
+router.put('/change/:id', async (req, res) => {
+	let { name, brand, price, stock, image, sold, size, score, genre, category } =
+		req.body;
+	let { id } = req.params;
+});
+
 module.exports = router;
