@@ -4,22 +4,22 @@ const { findUserByPk } = require('../Controllers/user');
 const router = Router();
 const { User } = require('../db');
 
-router.post('/post', async (req, res, next) => {
-	let { name, surname, age, email, password, location } = req.body;
-
-	if (email && password) {
-	} else
-		try {
-			// let height=`${heightMin}-${heightMax}`
-			// let weight=`${weightMin}-${weightMax}`
+router.post('/', async (req, res, next) => {
+	let { email, password } = req.body;
+	try {
+		if (email && password) {
 			let UserCreated = await User.create({
 				email,
 				password
 			});
-			res.status(200).send('usuario creado');
-		} catch (e) {
-			next(e);
+			res.status(200).send(UserCreated);
 		}
+
+		// let height=`${heightMin}-${heightMax}`
+		// let weight=`${weightMin}-${weightMax}`
+	} catch (e) {
+		next(e);
+	}
 });
 
 
