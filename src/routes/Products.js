@@ -16,7 +16,6 @@ router.get('/', async (req, res, next) => {
 	const { name, genre, category, size, brand } = req.query;
 	try {
 		const allProducts = await getAllProducts();
-         
 
 		if (name || genre || category || size || brand) {
 			var info;
@@ -101,6 +100,12 @@ router.post('/', async (req, res, next) => {
 	} catch (e) {
 		next(e);
 	}
+});
+
+router.put('/change/:id', async (req, res) => {
+	let { name, brand, price, stock, image, sold, size, score, genre, category } =
+		req.body;
+	let { id } = req.params;
 });
 
 module.exports = router;
