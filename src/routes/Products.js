@@ -6,13 +6,11 @@ const {
 	getAllProducts,
 	filterBySize,
 	filterByBrand,
-	filterByName,
-    addCommentToProduct
+	filterByName
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
 
 const router = Router();
-
 
 router.get('/', async (req, res, next) => {
 	const { name, genre, category, size, brand } = req.query;
@@ -41,78 +39,49 @@ router.get('/', async (req, res, next) => {
 		} else {
 			return res.json(allProducts);
 		}
-	} catch (error) {
-		next(error);
+	} catch (e) {
+		next(e);
 	}
 });
-
-router.put("/comment", async (req,res)=>{
-	try {
-		const {idP,idU,text} = req.body;
-		const productAndUser = await addCommentToProduct(idP,idU)
-        const product = await Product.findByPk(productAndUser[0].id);
-		const comment = {
-		   name: productAndUser[1].name,
-		   username:  productAndUser[1].username,
-		   email: productAndUser[1].email, 
-		   comment: text
-		};
-		let coments = product.comments.map(e => {
-			return JSON.parse(e)
-		})
-		 let userComment = coments.filter(e => 
-			e.username === productAndUser[1].name 
-			|| e.email === productAndUser[1].email 
-			|| e.username ===  productAndUser[1].username);
-        if(!userComment.length){
-			 const productPut = await product.update({
-			...product,
-			comments: [...product.comments,JSON.stringify(comment)]
-		})
-		 
-		res.send(productPut)
-		}else{
-			res.send("ya haz agregado tu opinion")
-		}
-       
-		
-		
-	} catch (error) {
-		console.log(error)
-	}
-})
 
 router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		if (id) {
 			const productDetail = await Product.findByPk(id);
-			
+
 			if (productDetail) {
+				let sum = 0;
+				let total = 0;
 				let categoryDb = await Category.findByPk(productDetail.categoryId);
-				 
+
+				if (productDetail.review) {
+					productDetail.review.forEach((e) => {
+						sum += e.number;
+					});
+					total =
+						(sum + productDetail.score) / (productDetail.review.length + 1);
+				} else {
+					total = productDetail.score;
+				}
+
 				const concatProduct = {
 					...productDetail.dataValues,
+					review: JSON.parse(productDetail.dataValues.review),
 					categoryName: categoryDb.name,
-					comments: productDetail.comments.map(e => {
-						return JSON.parse(e)
-					})
+					average: parseFloat(total.toFixed(1))
 				};
 				res.status(200).json(concatProduct);
 			} else {
 				return res.status(200).json({ message: 'ID not found' });
 			}
 		}
-	} catch (error) {
-		next(error);
+	} catch (e) {
+		next(e);
 	}
 });
 
-
-
-
-
-router.delete('/delete/:id', async function (req, res) {
+router.delete('/delete/:id', async function (req, res, next) {
 	const { id } = req.params;
 	try {
 		if (id) {
@@ -121,38 +90,86 @@ router.delete('/delete/:id', async function (req, res) {
 			});
 			res.send({ msg: 'producto eliminado' });
 		}
-	} catch (error) {
-		console.log(error);
-	}
-});
-
-router.post('/', async (req, res, next) => {
-	let { name, brand, price, stock, image, sold, size, score, genre, category } =
-		req.body;
-	try {
-		let catId = await Category.findOne({ where: { name: category } });
-		await Product.create({
-			name: name,
-			brand: brand,
-			price: parseFloat(price),
-			stock: parseInt(stock),
-			image: image,
-			sold: parseInt(sold),
-			size: size,
-			score: parseFloat(score),
-			genre: genre,
-			categoryId: catId.id
-		});
-		res.status(200).json({ message: 'New Product Created!' });
 	} catch (e) {
 		next(e);
 	}
 });
 
-router.put('/change/:id', async (req, res) => {
-	let { name, brand, price, stock, image, sold, size, score, genre, category } =
-		req.body;
-	let { id } = req.params;
+router.post('/', async (req, res, next) => {
+	try {
+		let { name, brand, price, stock, image, sold, size, score, genre } =
+			req.body;
+		if (
+			name &&
+			brand &&
+			price &&
+			stock &&
+			image &&
+			sold &&
+			size &&
+			score &&
+			genre &&
+			category
+		) {
+			let catId = await Category.findOne({ where: { name: category } });
+			await Product.create({
+				name: name,
+				brand: brand,
+				price: parseFloat(price),
+				stock: parseInt(stock),
+				image: image,
+				sold: parseInt(sold),
+				size: size,
+				score: parseFloat(score),
+				genre: genre,
+				categoryId: catId.id
+			});
+			res.status(200).json({ message: 'New Product Created!' });
+		} else {
+			res.status(400).json({ message: 'Invalid data error!!' });
+		}
+	} catch (e) {
+		next(e);
+	}
+});
+
+router.put('/change/:id', async (req, res, next) => {
+	try {
+		let { id } = req.params;
+		let { name, brand, price, stock, image, sold, size, score, genre } =
+			req.body;
+		if (
+			id &&
+			name &&
+			brand &&
+			price &&
+			stock &&
+			image &&
+			sold &&
+			size &&
+			score &&
+			genre
+		) {
+			let product = await Product.findByPk(id);
+			await product.update({
+				...product,
+				name: name,
+				brand: brand,
+				price: parseFloat(price),
+				stock: parseInt(stock),
+				image: image,
+				sold: parseInt(sold),
+				size: size,
+				score: parseFloat(score),
+				genre: genre
+			});
+			res.status(200).json({ message: 'Successfully modified product!' });
+		} else {
+			res.status(400).json({ message: 'Error could not modify the product!' });
+		}
+	} catch (e) {
+		next(e);
+	}
 });
 
 module.exports = router;

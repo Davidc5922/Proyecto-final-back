@@ -11,9 +11,14 @@ module.exports = (sequelize) => {
 				defaultValue: DataTypes.UUIDV4,
 				primaryKey: true
 			},
-			number: {
-				type: DataTypes.FLOAT,
-				allowNull: false
+			data: {
+				type: DataTypes.STRING,
+				get() {
+					return JSON.parse(this.getDataValue('number'));
+				},
+				set(val) {
+					return this.setDataValue('number', JSON.stringify(val));
+				}
 			}
 		},
 		{ timestamps: false }
