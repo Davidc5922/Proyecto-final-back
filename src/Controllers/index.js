@@ -21,14 +21,6 @@ const getAllProducts = async function () {
 	}
 };
 
-const getProductById = async (id) => {
-   try {
-	   const product = await Product.findByPk(id)
-	   return product
-   } catch (e) {
-	   console.log(e)
-   }
-};
 
 const filterByName = async (name) => {
 	try {
