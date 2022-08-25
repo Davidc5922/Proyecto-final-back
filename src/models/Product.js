@@ -43,6 +43,10 @@ module.exports = (sequelize) => {
 				type: DataTypes.FLOAT,
 				allowNull: false
 			},
+			comments: {
+                type: DataTypes.ARRAY(DataTypes.STRING),
+                defaultValue: []
+			},
 			genre: {
 				type: DataTypes.STRING,
 				allowNull: false
