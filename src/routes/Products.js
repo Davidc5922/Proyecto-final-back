@@ -6,8 +6,7 @@ const {
 	getAllProducts,
 	filterBySize,
 	filterByBrand,
-	filterByName,
-	addCommentToProduct
+	filterByName
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
 

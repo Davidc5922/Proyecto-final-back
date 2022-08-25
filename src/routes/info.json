@@ -8,7 +8,7 @@
 		"stock": 3,
 		"sold": 5,
 		"score": 4,
-		"size": [37, 38, 39, 40, 41,  43],
+		"size": [37, 38, 39, 40, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/597141-500-auto?v=637949761277370000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -32,7 +32,7 @@
 		"stock": 4,
 		"sold": 1,
 		"score": 2.5,
-		"size": [37, 38, 39, 40, 41,  43],
+		"size": [37, 38, 39, 40, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/592885-500-auto?v=637939197312030000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -44,7 +44,7 @@
 		"stock": 3,
 		"sold": 2,
 		"score": 1.5,
-		"size": [37, 38, 39,  41, 42, 43],
+		"size": [37, 38, 39, 41, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/573979-500-auto?v=637919758067200000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -56,7 +56,7 @@
 		"stock": 5,
 		"sold": 12,
 		"score": 4.5,
-		"size": [37, 38, 39, 40,  42, 43],
+		"size": [37, 38, 39, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/571599-500-auto?v=637909172164170000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -68,7 +68,7 @@
 		"stock": 3,
 		"sold": 5,
 		"score": 3.5,
-		"size": [37, 38, 39, 40,  42, 43],
+		"size": [37, 38, 39, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/571541-500-auto?v=637908984780630000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -80,7 +80,7 @@
 		"stock": 1,
 		"sold": 8,
 		"score": 4,
-		"size": [ 38, 40, 41, 42],
+		"size": [38, 40, 41, 42],
 		"image": "https://essential.vtexassets.com/arquivos/ids/503011-500-auto?v=637741514504570000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -116,7 +116,7 @@
 		"stock": 4,
 		"sold": 6,
 		"score": 4.5,
-		"size": [37, 38,   41,  43],
+		"size": [37, 38, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/467735-500-auto?v=637672155860800000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -140,7 +140,7 @@
 		"stock": 6,
 		"sold": 13,
 		"score": 5,
-		"size": [37, 38,  40,  42, 43],
+		"size": [37, 38, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/602044-500-auto?v=637956636069200000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -152,7 +152,7 @@
 		"stock": 3,
 		"sold": 4,
 		"score": 5,
-		"size": [37, 38, 40 ],
+		"size": [37, 38, 40],
 		"image": "https://essential.vtexassets.com/arquivos/ids/575880-500-auto?v=637921457631530000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -164,7 +164,7 @@
 		"stock": 1,
 		"sold": 2,
 		"score": 3,
-		"size": [37,  39,  41, 42, 43],
+		"size": [37, 39, 41, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/565273-500-auto?v=637898519654600000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -176,7 +176,7 @@
 		"stock": 1,
 		"sold": 9,
 		"score": 4.5,
-		"size": [37,  39, 40,  42, 43],
+		"size": [37, 39, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/562107-500-auto?v=637892432033770000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -188,7 +188,7 @@
 		"stock": 2,
 		"sold": 7,
 		"score": 9,
-		"size": [37, 38, 39,  41,  43],
+		"size": [37, 38, 39, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/565259-500-auto?v=637898519595330000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -200,7 +200,7 @@
 		"stock": 3,
 		"sold": 10,
 		"score": 5,
-		"size": [37, 38,  40,  42, 43],
+		"size": [37, 38, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/561230-500-auto?v=637889218425500000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -212,7 +212,7 @@
 		"stock": 4,
 		"sold": 4,
 		"score": 3,
-		"size": [37, 38,  40,   43],
+		"size": [37, 38, 40, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/565306-500-auto?v=637898519834130000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -236,7 +236,7 @@
 		"stock": 1,
 		"sold": 15,
 		"score": 5,
-		"size": [37,  39, 40, 41,  43],
+		"size": [37, 39, 40, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/561240-500-auto?v=637889218487200000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -248,7 +248,7 @@
 		"stock": 4,
 		"sold": 24,
 		"score": 4.5,
-		"size": [37,   40,  42, 43],
+		"size": [37, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/474503-500-auto?v=637679342738800000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -260,7 +260,7 @@
 		"stock": 6,
 		"sold": 8,
 		"score": 4,
-		"size": [37,  39,  41,  43],
+		"size": [37, 39, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/592589-500-auto?v=637938457358700000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -284,7 +284,7 @@
 		"stock": 4,
 		"sold": 3,
 		"score": 2,
-		"size": [37,    41,  43],
+		"size": [37, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/568732-500-auto?v=637903668933230000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -296,7 +296,7 @@
 		"stock": 16,
 		"sold": 4,
 		"score": 2,
-		"size": [37, 38,   41,  43],
+		"size": [37, 38, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/559396-500-auto?v=637885534707170000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -308,7 +308,7 @@
 		"stock": 2,
 		"sold": 16,
 		"score": 5,
-		"size": [ 38,    42, 43],
+		"size": [38, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/560570-500-auto?v=637886683135230000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -380,7 +380,7 @@
 		"stock": 5,
 		"sold": 3,
 		"score": 3.5,
-		"size": [37, 38, 39,  41,  43],
+		"size": [37, 38, 39, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/600107-800-auto?v=637955558442470000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -392,7 +392,7 @@
 		"stock": 2,
 		"sold": 1,
 		"score": 2.6,
-		"size": [37,   40,   43],
+		"size": [37, 40, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/601978-800-auto?v=637956635738830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -428,7 +428,7 @@
 		"stock": 25,
 		"sold": 5,
 		"score": 0,
-		"size": [ 38, 39,   42, 43],
+		"size": [38, 39, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/598671-800-auto?v=637952305641230000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -440,7 +440,7 @@
 		"stock": 15,
 		"sold": 4,
 		"score": 1.5,
-		"size": [ 38,  40, 41,  43],
+		"size": [38, 40, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/598665-800-auto?v=637952302596000000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -452,7 +452,7 @@
 		"stock": 20,
 		"sold": 6,
 		"score": 1.7,
-		"size": [37,  39,  41,  43],
+		"size": [37, 39, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/576987-800-auto?v=637921838773470000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -464,7 +464,7 @@
 		"stock": 15,
 		"sold": 2,
 		"score": 2,
-		"size": [37, 38,  40,   43],
+		"size": [37, 38, 40, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/577345-800-auto?v=637921849264530000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -476,7 +476,7 @@
 		"stock": 30,
 		"sold": 0,
 		"score": 5,
-		"size": [37,  39,   42],
+		"size": [37, 39, 42],
 		"image": "https://essential.vtexassets.com/arquivos/ids/573958-800-auto?v=637919757965930000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -500,7 +500,7 @@
 		"stock": 22,
 		"sold": 10,
 		"score": 3.5,
-		"size": [37, 38, 39, 40,  42, 43],
+		"size": [37, 38, 39, 40, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/564254-800-auto?v=637896920226570000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -512,7 +512,7 @@
 		"stock": 16,
 		"sold": 4,
 		"score": 2,
-		"size": [37, 38, 39,  41,  43],
+		"size": [37, 38, 39, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/595316-800-auto?v=637944443307400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -524,7 +524,7 @@
 		"stock": 30,
 		"sold": 10,
 		"score": 1.5,
-		"size": [37, 38, 39,  41, 42],
+		"size": [37, 38, 39, 41, 42],
 		"image": "https://essential.vtexassets.com/arquivos/ids/595614-800-auto?v=637944583275800000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -536,7 +536,7 @@
 		"stock": 25,
 		"sold": 3,
 		"score": 1.7,
-		"size": [37,   40, 41, 42],
+		"size": [37, 40, 41, 42],
 		"image": "https://essential.vtexassets.com/arquivos/ids/592589-800-auto?v=637938457358700000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -548,7 +548,7 @@
 		"stock": 20,
 		"sold": 10,
 		"score": 2.3,
-		"size": [ 38, 39,  41,  43],
+		"size": [38, 39, 41, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/591150-800-auto?v=637937753615770000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -560,7 +560,7 @@
 		"stock": 27,
 		"sold": 6,
 		"score": 4.3,
-		"size": [37, 38, 39,  41, 42, 43],
+		"size": [37, 38, 39, 41, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/581381-800-auto?v=637927000535000000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -656,7 +656,7 @@
 		"stock": 20,
 		"sold": 17,
 		"score": 3,
-		"size": [37, 38,   41, 42, 43],
+		"size": [37, 38, 41, 42, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/602060-800-auto?v=637956636141370000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -668,7 +668,7 @@
 		"stock": 5,
 		"sold": 16,
 		"score": 1.6,
-		"size": [37, 38,  40,   43],
+		"size": [37, 38, 40, 43],
 		"image": "https://essential.vtexassets.com/arquivos/ids/574017-800-auto?v=637919758254430000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -716,7 +716,7 @@
 		"stock": 29,
 		"sold": 16,
 		"score": 2.6,
-		"size": [37, 39, 41 ],
+		"size": [37, 39, 41],
 		"image": "https://essential.vtexassets.com/arquivos/ids/562183-800-auto?v=637892432349070000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -728,7 +728,7 @@
 		"stock": 3,
 		"sold": 17,
 		"score": 4.3,
-		"size": ["XS", "S"],
+		"size": ["XS", "S", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/605556-1200-auto?v=637959250904530000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -776,7 +776,7 @@
 		"stock": 4,
 		"sold": 7,
 		"score": 4.5,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/600463-1200-auto?v=637955828691570000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -812,7 +812,7 @@
 		"stock": 5,
 		"sold": 16,
 		"score": 2.3,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/591408-1200-auto?v=637937754852130000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -848,7 +848,7 @@
 		"stock": 23,
 		"sold": 11,
 		"score": 4.8,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/588863-1200-auto?v=637933220331570000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -920,7 +920,7 @@
 		"stock": 3,
 		"sold": 14,
 		"score": 4.4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/579676-1200-auto?v=637924804001630000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -980,7 +980,7 @@
 		"stock": 4,
 		"sold": 12,
 		"score": 4.8,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/565228-1200-auto?v=637898519467130000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1028,7 +1028,7 @@
 		"stock": 8,
 		"sold": 22,
 		"score": 4.8,
-		"size": ["XS", "S", "M"],
+		"size": ["XS", "S", "M", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/539388-1200-auto?v=637841903723700000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1076,7 +1076,7 @@
 		"stock": 12,
 		"sold": 1,
 		"score": 4.2,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/529849-1200-auto?v=637822541428330000&width=1200&height=auto&aspect=true"
 	},
 
@@ -1113,7 +1113,7 @@
 		"stock": 5,
 		"sold": 16,
 		"score": 4,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/587022-800-auto?v=637932201332830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1137,7 +1137,7 @@
 		"stock": 6,
 		"sold": 13,
 		"score": 4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/595310-800-auto?v=637944443278830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1185,7 +1185,7 @@
 		"stock": 5,
 		"sold": 17,
 		"score": 5,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/571207-800-auto?v=637908282468730000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1197,7 +1197,7 @@
 		"stock": 7,
 		"sold": 11,
 		"score": 2.4,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/556727-800-auto?v=637876957779700000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1209,7 +1209,7 @@
 		"stock": 15,
 		"sold": 5,
 		"score": 4,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/586993-800-auto?v=637932201160830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1221,7 +1221,7 @@
 		"stock": 3,
 		"sold": 15,
 		"score": 4.1,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/571199-800-auto?v=637908282433400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1233,7 +1233,7 @@
 		"stock": 7,
 		"sold": 9,
 		"score": 3.3,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/571202-800-auto?v=637908282446830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1245,7 +1245,7 @@
 		"stock": 7,
 		"sold": 14,
 		"score": 4.1,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/546209-800-auto?v=637853603994300000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1269,7 +1269,7 @@
 		"stock": 14,
 		"sold": 4,
 		"score": 3.6,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/544151-800-auto?v=637850384197630000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1305,7 +1305,7 @@
 		"stock": 8,
 		"sold": 14,
 		"score": 4.4,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/532332-800-auto?v=637828507375000000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1329,7 +1329,7 @@
 		"stock": 9,
 		"sold": 8,
 		"score": 4.6,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/532358-800-auto?v=637828507536470000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1341,7 +1341,7 @@
 		"stock": 8,
 		"sold": 14,
 		"score": 3.2,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/529843-800-auto?v=637822541402470000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1353,7 +1353,7 @@
 		"stock": 12,
 		"sold": 6,
 		"score": 2.2,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/488945-800-auto?v=637713897340400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1389,7 +1389,7 @@
 		"stock": 15,
 		"sold": 5,
 		"score": 2.5,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/532324-800-auto?v=637828507302200000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1425,7 +1425,7 @@
 		"stock": 9,
 		"sold": 14,
 		"score": 3.8,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/514444-800-auto?v=637787028394800000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1437,7 +1437,7 @@
 		"stock": 9,
 		"sold": 14,
 		"score": 3.9,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/474840-800-auto?v=637680787130030000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -1448,7 +1448,7 @@
 		"stock": 10,
 		"sold": 6,
 		"score": 4,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/588895-800-auto?v=637933220491230000&width=800&height=auto&aspect=true"
 	},
@@ -1460,7 +1460,7 @@
 		"stock": 10,
 		"sold": 15,
 		"score": 2,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/586950-800-auto?v=637932200974730000&width=800&height=auto&aspect=true"
 	},
@@ -1472,7 +1472,7 @@
 		"stock": 30,
 		"sold": 2,
 		"score": 3,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/563677-800-auto?v=637895065233700000&width=800&height=auto&aspect=true"
 	},
@@ -1484,7 +1484,7 @@
 		"stock": 15,
 		"sold": 15,
 		"score": 3,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/561264-800-auto?v=637889218598600000&width=800&height=auto&aspect=true"
 	},
@@ -1496,7 +1496,7 @@
 		"stock": 25,
 		"sold": 15,
 		"score": 1.5,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/605546-800-auto?v=637959250857000000&width=800&height=auto&aspect=true"
 	},
@@ -1508,7 +1508,7 @@
 		"stock": 15,
 		"sold": 6,
 		"score": 3.5,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/591413-800-auto?v=637937754886230000&width=800&height=auto&aspect=true"
 	},
@@ -1568,7 +1568,7 @@
 		"stock": 5,
 		"sold": 15,
 		"score": 4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/496242-800-auto?v=637727735670600000&width=800&height=auto&aspect=true"
 	},
@@ -1592,7 +1592,7 @@
 		"stock": 12,
 		"sold": 4,
 		"score": 2.1,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/560660-800-auto?v=637886683678800000&width=800&height=auto&aspect=true"
 	},
@@ -1604,7 +1604,7 @@
 		"stock": 19,
 		"sold": 11,
 		"score": 4.1,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/523765-800-auto?v=637802963216700000&width=800&height=auto&aspect=true"
 	},
@@ -1616,7 +1616,7 @@
 		"stock": 12,
 		"sold": 13,
 		"score": 4.6,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/514412-800-auto?v=637787028258700000&width=800&height=auto&aspect=true"
 	},
@@ -1652,7 +1652,7 @@
 		"stock": 10,
 		"sold": 6,
 		"score": 3.2,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/570280-800-auto?v=637907420225000000&width=800&height=auto&aspect=true"
 	},
@@ -1664,7 +1664,7 @@
 		"stock": 16,
 		"sold": 3,
 		"score": 2.2,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/561619-800-auto?v=637891602165530000&width=800&height=auto&aspect=true"
 	},
@@ -1676,7 +1676,7 @@
 		"stock": 16,
 		"sold": 5,
 		"score": 2.9,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/558794-800-auto?v=637883197912400000&width=800&height=auto&aspect=true"
 	},
@@ -1700,7 +1700,7 @@
 		"stock": 29,
 		"sold": 1,
 		"score": 1.5,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/454336-800-auto?v=637632685078500000&width=800&height=auto&aspect=true"
 	},
@@ -1724,7 +1724,7 @@
 		"stock": 5,
 		"sold": 6,
 		"score": 2.2,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/353427-800-auto?v=637363853337170000&width=800&height=auto&aspect=true"
 	},
@@ -1736,7 +1736,7 @@
 		"stock": 30,
 		"sold": 15,
 		"score": 3.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/525040-800-auto?v=637810513682830000&width=800&height=auto&aspect=true"
 	},
@@ -1748,7 +1748,7 @@
 		"stock": 14,
 		"sold": 16,
 		"score": 4.3,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/522167-800-auto?v=637801037442130000&width=800&height=auto&aspect=true"
 	},
@@ -1772,7 +1772,7 @@
 		"stock": 12,
 		"sold": 23,
 		"score": 4.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/543443-800-auto?v=637849265732200000&width=800&height=auto&aspect=true"
 	},
@@ -1784,7 +1784,7 @@
 		"stock": 8,
 		"sold": 11,
 		"score": 2.1,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/528480-800-auto?v=637818592483100000&width=800&height=auto&aspect=true"
 	},
@@ -1796,7 +1796,7 @@
 		"stock": 18,
 		"sold": 14,
 		"score": 1.4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/524752-800-auto?v=637806984682770000&width=800&height=auto&aspect=true"
 	},
@@ -1809,7 +1809,7 @@
 		"stock": 10,
 		"sold": 0,
 		"score": 3.4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/602148-500-auto?v=637956636547270000&width=500&height=auto&aspect=true"
 	},
 	{
@@ -1821,7 +1821,7 @@
 		"stock": 22,
 		"sold": 4,
 		"score": 4.5,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/586997-1200-auto?v=637932201181800000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1845,7 +1845,7 @@
 		"stock": 15,
 		"sold": 6,
 		"score": 3.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/604887-1200-auto?v=637958376551800000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1869,7 +1869,7 @@
 		"stock": 12,
 		"sold": 5,
 		"score": 3.4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/561597-1200-auto?v=637891602038600000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1893,7 +1893,7 @@
 		"stock": 19,
 		"sold": 3,
 		"score": 4.2,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/574146-1200-auto?v=637919758879470000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1905,7 +1905,7 @@
 		"stock": 14,
 		"sold": 23,
 		"score": 4.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/558024-1200-auto?v=637880474895530000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1929,7 +1929,7 @@
 		"stock": 19,
 		"sold": 3,
 		"score": 4.2,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/574146-1200-auto?v=637919758879470000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1941,7 +1941,7 @@
 		"stock": 12,
 		"sold": 23,
 		"score": 4.7,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/440275-1200-auto?v=637602245461430000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -1977,7 +1977,7 @@
 		"stock": 19,
 		"sold": 3,
 		"score": 4.6,
-		"size": ["XS", "L"],
+		"size": ["XS", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/429900-1200-auto?v=637563245844400000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2001,7 +2001,7 @@
 		"stock": 17,
 		"sold": 13,
 		"score": 3.3,
-		"size": ["XS", "L"],
+		"size": ["XS", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/522167-1200-auto?v=637801037442130000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2013,7 +2013,7 @@
 		"stock": 22,
 		"sold": 8,
 		"score": 4.2,
-		"size": ["XS", "L"],
+		"size": ["XS", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/500902-1200-auto?v=637738958978770000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2025,7 +2025,7 @@
 		"stock": 27,
 		"sold": 12,
 		"score": 4.8,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/568647-1200-auto?v=637902254553070000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2037,7 +2037,7 @@
 		"stock": 24,
 		"sold": 12,
 		"score": 4.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/602137-1200-auto?v=637956636493300000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2061,7 +2061,7 @@
 		"stock": 24,
 		"sold": 5,
 		"score": 4.2,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/604887-1200-auto?v=637958376551800000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2073,7 +2073,7 @@
 		"stock": 29,
 		"sold": 4,
 		"score": 4.3,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/579704-1200-auto?v=637924804147000000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2097,7 +2097,7 @@
 		"stock": 29,
 		"sold": 2,
 		"score": 3.3,
-		"size": ["XS", "S", "M"],
+		"size": ["XS", "S", "M", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/463554-1200-auto?v=637660061333670000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2157,7 +2157,7 @@
 		"stock": 27,
 		"sold": 12,
 		"score": 4.6,
-		"size": ["XS", "S", "M"],
+		"size": ["XS", "S", "M", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/543443-1200-auto?v=637849265732200000&width=1200&height=auto&aspect=true"
 	},
 	{
@@ -2169,7 +2169,7 @@
 		"stock": 6,
 		"sold": 3,
 		"score": 4.1,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/567281-1600-auto?v=637901089370600000&width=1600&height=auto&aspect=true"
 	},
 	{
@@ -2181,7 +2181,7 @@
 		"stock": 3,
 		"sold": 11,
 		"score": 4.7,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/600535-800-auto?v=637955829063830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2193,7 +2193,7 @@
 		"stock": 6,
 		"sold": 5,
 		"score": 4.2,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/591418-800-auto?v=637937754907800000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2205,7 +2205,7 @@
 		"stock": 7,
 		"sold": 8,
 		"score": 3.8,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/567285-800-auto?v=637901089388600000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2229,7 +2229,7 @@
 		"stock": 7,
 		"sold": 3,
 		"score": 4.5,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/591423-800-auto?v=637937754927830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2241,7 +2241,7 @@
 		"stock": 11,
 		"sold": 7,
 		"score": 3.9,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/567215-800-auto?v=637901089017370000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2265,7 +2265,7 @@
 		"stock": 5,
 		"sold": 3,
 		"score": 4.1,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/561603-800-auto?v=637891602065830000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2277,7 +2277,7 @@
 		"stock": 2,
 		"sold": 9,
 		"score": 4.6,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/563645-800-auto?v=637895065092270000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2301,7 +2301,7 @@
 		"stock": 5,
 		"sold": 9,
 		"score": 4.3,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/546829-800-auto?v=637855302489930000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2313,7 +2313,7 @@
 		"stock": 4,
 		"sold": 3,
 		"score": 4.2,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/539525-800-auto?v=637841904435970000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2325,7 +2325,7 @@
 		"stock": 9,
 		"sold": 5,
 		"score": 3.1,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/407963-800-auto?v=637498485527130000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2349,7 +2349,7 @@
 		"stock": 12,
 		"sold": 6,
 		"score": 4,
-		"size": ["M", "L"],
+		"size": ["M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/538179-800-auto?v=637838469627870000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2373,7 +2373,7 @@
 		"stock": 5,
 		"sold": 6,
 		"score": 4.3,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/535968-800-auto?v=637834871269230000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2385,7 +2385,7 @@
 		"stock": 9,
 		"sold": 11,
 		"score": 3.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/528511-800-auto?v=637818592629570000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2397,7 +2397,7 @@
 		"stock": 2,
 		"sold": 5,
 		"score": 3.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/395823-800-auto?v=637432802042300000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2409,7 +2409,7 @@
 		"stock": 7,
 		"sold": 4,
 		"score": 4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/465170-800-auto?v=637666332846500000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2433,7 +2433,7 @@
 		"stock": 11,
 		"sold": 4,
 		"score": 3.8,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/387491-800-auto?v=637413903756400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2457,7 +2457,7 @@
 		"stock": 1,
 		"sold": 3,
 		"score": 4.7,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/514426-800-auto?v=637787028320800000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2493,7 +2493,7 @@
 		"stock": 7,
 		"sold": 1,
 		"score": 3.5,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/484402-800-auto?v=637707566156030000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2505,7 +2505,7 @@
 		"stock": 6,
 		"sold": 2,
 		"score": 3.6,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/437243-800-auto?v=637582446321530000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2529,7 +2529,7 @@
 		"stock": 30,
 		"sold": 0,
 		"score": 3.5,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/587006-800-auto?v=637932201229200000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2541,7 +2541,7 @@
 		"stock": 15,
 		"sold": 5,
 		"score": 2,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/595306-800-auto?v=637944443260530000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2553,7 +2553,7 @@
 		"stock": 20,
 		"sold": 10,
 		"score": 4.4,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/602131-800-auto?v=637956636463600000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2577,7 +2577,7 @@
 		"stock": 4,
 		"sold": 12,
 		"score": 2.6,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/592855-800-auto?v=637938700641500000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2589,7 +2589,7 @@
 		"stock": 5,
 		"sold": 10,
 		"score": 2,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/540012-1000-1000/DB4950-010_1.jpg?v=637915216611800000"
 	},
 	{
@@ -2625,7 +2625,7 @@
 		"stock": 3,
 		"sold": 5,
 		"score": 1.5,
-		"size": ["XS", "L"],
+		"size": ["XS", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/558781-800-auto?v=637883197851700000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2637,7 +2637,7 @@
 		"stock": 15,
 		"sold": 5,
 		"score": 3.4,
-		"size": ["XS", "L"],
+		"size": ["XS", "L", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/563681-800-auto?v=637895065251700000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2661,7 +2661,7 @@
 		"stock": 26,
 		"sold": 10,
 		"score": 3.4,
-		"size": ["XS", "S", "M"],
+		"size": ["XS", "S", "M", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/560689-800-auto?v=637886683820400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2673,7 +2673,7 @@
 		"stock": 15,
 		"sold": 5,
 		"score": 2,
-		"size": ["XS", "S", "M"],
+		"size": ["XS", "S", "M", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/539535-800-auto?v=637841904484670000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2685,7 +2685,7 @@
 		"stock": 4,
 		"sold": 16,
 		"score": 4.2,
-		"size": ["XS", "S", "M"],
+		"size": ["XS", "S", "M", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/539529-800-auto?v=637841904457100000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2709,7 +2709,7 @@
 		"stock": 4,
 		"sold": 6,
 		"score": 1.5,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/522174-800-auto?v=637801037472400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2733,7 +2733,7 @@
 		"stock": 6,
 		"sold": 16,
 		"score": 4.5,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/380686-1000-1000/CJ5046-060_1.jpg?v=637580847119300000"
 	},
 	{
@@ -2781,7 +2781,7 @@
 		"stock": 23,
 		"sold": 7,
 		"score": 3.7,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/486885-800-auto?v=637709710018970000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2805,7 +2805,7 @@
 		"stock": 16,
 		"sold": 7,
 		"score": 3,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/429112-800-auto?v=637558255745230000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2817,7 +2817,7 @@
 		"stock": 19,
 		"sold": 11,
 		"score": 3.8,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/559056-1000-1000/53074695_1.jpg?v=637947217214470000"
 	},
 	{
@@ -2841,7 +2841,7 @@
 		"stock": 17,
 		"sold": 4,
 		"score": 2.1,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/514465-800-auto?v=637787028503530000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2865,7 +2865,7 @@
 		"stock": 2,
 		"sold": 7,
 		"score": 2.8,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/461756-800-auto?v=637656621746430000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2877,7 +2877,7 @@
 		"stock": 22,
 		"sold": 1,
 		"score": 2,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/577561-800-auto?v=637922036130100000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2889,7 +2889,7 @@
 		"genre": "mujer",
 		"category": "campera",
 		"score": 3.9,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/587002-800-auto?v=637932201210730000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2901,7 +2901,7 @@
 		"stock": 10,
 		"sold": 11,
 		"score": 4.3,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/600525-800-auto?v=637955829013470000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2925,7 +2925,7 @@
 		"stock": 9,
 		"sold": 6,
 		"score": 4.1,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/587039-800-auto?v=637932201417600000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2937,7 +2937,7 @@
 		"stock": 6,
 		"sold": 4,
 		"score": 4.1,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/558075-800-auto?v=637880475159300000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2961,7 +2961,7 @@
 		"stock": 5,
 		"sold": 7,
 		"score": 4.2,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/587043-800-auto?v=637932201434670000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2973,7 +2973,7 @@
 		"stock": 11,
 		"sold": 7,
 		"score": 4.1,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/520523-800-auto?v=637795668225900000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -2997,7 +2997,7 @@
 		"stock": 14,
 		"sold": 12,
 		"score": 4.6,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/567294-800-auto?v=637901089428300000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3009,7 +3009,7 @@
 		"stock": 5,
 		"sold": 13,
 		"score": 4.3,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/496235-800-auto?v=637727735640600000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3033,7 +3033,7 @@
 		"stock": 5,
 		"sold": 16,
 		"score": 4.6,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/567289-800-auto?v=637901089405630000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3081,7 +3081,7 @@
 		"stock": 4,
 		"sold": 13,
 		"score": 4.1,
-		"size": ["XS", "L"],
+		"size": ["XS", "L", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/454203-800-auto?v=637631631264970000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3093,7 +3093,7 @@
 		"stock": 7,
 		"sold": 14,
 		"score": 4.3,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/445010-1000-1000/84595776_1.jpg?v=637724129086800000"
 	},
 	{
@@ -3105,7 +3105,7 @@
 		"stock": 7,
 		"sold": 2,
 		"score": 3,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/528508-800-auto?v=637818592611400000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3117,7 +3117,7 @@
 		"stock": 4,
 		"sold": 17,
 		"score": 4.6,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/516548-500-500/DM6084-010_1.jpg?v=637871838477730000"
 	},
 	{
@@ -3129,7 +3129,7 @@
 		"stock": 16,
 		"sold": 18,
 		"score": 4.8,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/523941-1000-1000/53162301_1.jpg?v=637886626010770000"
 	},
 	{
@@ -3141,7 +3141,7 @@
 		"stock": 10,
 		"sold": 7,
 		"score": 4.1,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/467979-800-auto?v=637672423809970000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3165,7 +3165,7 @@
 		"stock": 4,
 		"sold": 1,
 		"score": 3,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/407699-1000-1000/53084901_1.jpg?v=637644781926000000"
 	},
 	{
@@ -3177,7 +3177,7 @@
 		"stock": 6,
 		"sold": 2,
 		"score": 4,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/435317-800-auto?v=637582266598800000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3201,7 +3201,7 @@
 		"stock": 16,
 		"sold": 12,
 		"score": 4.6,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/474892-1000-1000/H34593_1.jpg?v=637802075930130000"
 	},
 	{
@@ -3225,7 +3225,7 @@
 		"stock": 9,
 		"sold": 11,
 		"score": 4.3,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/289289-500-500/BV3939-663_1.jpg?v=637378758819730000"
 	},
 	{
@@ -3249,7 +3249,7 @@
 		"stock": 7,
 		"sold": 15,
 		"score": 4.7,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/594874-800-auto?v=637943708512730000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3273,7 +3273,7 @@
 		"stock": 14,
 		"sold": 15,
 		"score": 4.2,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/602137-800-auto?v=637956636493300000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3285,7 +3285,7 @@
 		"stock": 5,
 		"sold": 12,
 		"score": 4.5,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/591247-800-auto?v=637937754055330000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3297,7 +3297,7 @@
 		"stock": 12,
 		"sold": 8,
 		"score": 4,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/579811-800-auto?v=637924804708700000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3321,7 +3321,7 @@
 		"stock": 8,
 		"sold": 9,
 		"score": 4.2,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/558777-800-auto?v=637883197833270000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3345,7 +3345,7 @@
 		"stock": 12,
 		"sold": 7,
 		"score": 4.1,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/563670-800-auto?v=637895065203270000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3357,7 +3357,7 @@
 		"stock": 7,
 		"sold": 5,
 		"score": 3.2,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/529851-800-auto?v=637822541438000000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3369,7 +3369,7 @@
 		"stock": 11,
 		"sold": 7,
 		"score": 3.9,
-		"size": ["S", "M", "L"],
+		"size": ["S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/370464-800-auto?v=637390767003430000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3393,7 +3393,7 @@
 		"stock": 11,
 		"sold": 9,
 		"score": 4.2,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/430023-800-auto?v=637564415643800000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3405,7 +3405,7 @@
 		"stock": 6,
 		"sold": 16,
 		"score": 4.1,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/531131-1000-1000/CU4513-455_1.jpg?v=637897971283500000"
 	},
 	{
@@ -3429,7 +3429,7 @@
 		"stock": 17,
 		"sold": 9,
 		"score": 4,
-		"size": ["XS", "S", "M", "L"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/522597-1000-1000/58216706_1.jpg?v=637885693290730000"
 	},
 	{
@@ -3441,7 +3441,7 @@
 		"stock": 7,
 		"sold": 12,
 		"score": 3.8,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/531122-1000-1000/CU4491-342_1.jpg?v=637897970954370000"
 	},
 	{
@@ -3465,7 +3465,7 @@
 		"stock": 18,
 		"sold": 5,
 		"score": 3.1,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/514610-1000-1000/53009411_1.jpg?v=637868415338430000"
 	},
 	{
@@ -3489,7 +3489,7 @@
 		"stock": 7,
 		"sold": 11,
 		"score": 4.4,
-		"size": ["XS", "S", "L"],
+		"size": ["XS", "S", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/528529-800-auto?v=637818592710630000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3501,7 +3501,7 @@
 		"stock": 10,
 		"sold": 11,
 		"score": 4.5,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/461739-1000-1000/53111901_1.jpg?v=637775282005470000"
 	},
 	{
@@ -3525,7 +3525,7 @@
 		"stock": 12,
 		"sold": 5,
 		"score": 4,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/528574-800-auto?v=637818592929870000&width=800&height=auto&aspect=true"
 	},
 	{
@@ -3537,7 +3537,7 @@
 		"stock": 4,
 		"sold": 18,
 		"score": 4.5,
-		"size": ["XS", "M", "L"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/480121-1000-1000/H37735_1.jpg?v=637813048501570000"
 	},
 	{
@@ -3573,7 +3573,7 @@
 		"stock": 10,
 		"sold": 4,
 		"score": 3.7,
-		"size": ["XS", "S"],
+		"size": ["XS", "S", "XL", "XXL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/423128-1000-1000/FM3870_1.jpg?v=637678514068270000"
 	},
 	{
@@ -3585,7 +3585,7 @@
 		"stock": 3,
 		"sold": 17,
 		"score": 4.3,
-		"size": ["XS", "S"],
+		"size": ["XS", "S", "XL"],
 		"image": "https://sevensport.vteximg.com.br/arquivos/ids/236859-1000-1000/CAMPERAADIDASORIGINALSVOCALDWSUITED7217HOMBRE.jpg?v=637030559106600000"
 	},
 	{
@@ -3597,7 +3597,7 @@
 		"stock": 9,
 		"sold": 10,
 		"score": 3.2,
-		"size": ["XS", "S"],
+		"size": ["XS", "S", "XL"],
 		"image": "https://essential.vtexassets.com/arquivos/ids/482805-800-auto?v=637703277743670000&width=800&height=auto&aspect=true"
 	}
 ]

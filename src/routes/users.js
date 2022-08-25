@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { findByName } = require('../Controllers/user');
+const { findByName } = require('../Controllers/User_C.js');
 const router = Router();
 const { User } = require('../db');
 
