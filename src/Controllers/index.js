@@ -1,86 +1,92 @@
-const e = require("express");
-const {Product,Category} = require("../db")
+const e = require('express');
+const { Product, Category } = require('../db');
+var currentInfo;
 
-
-const getAllProducts = async function(){
-    try {
-        const allInfo = await Product.findAll()
-        
-        
-        return allInfo.map(el => ({
-            id: el.id,
-            name: el.name,
-            brand: el.brand,
-            image: el.image
-        }));
-    } catch (error) {
-        console.log(error)
-    }
-}
+const getAllProducts = async function () {
+	try {
+		currentInfo = await Product.findAll();
+		currentInfo = currentInfo.map((el) => ({
+			id: el.id,
+			name: el.name,
+			price: el.price,
+			image: el.image,
+			genre: el.genre,
+			categoryId: el.categoryId,
+			size: el.size,
+			brand: el.brand
+		}));
+		console.log(currentInfo.length);
+		return currentInfo;
+	} catch (e) {
+		console.log(`Error function getAllProducts: ${e}`);
+	}
+};
+const filterByName = async (name) => {
+	try {
+		currentInfo = currentInfo.filter((e) =>
+			e.name.toLowerCase().includes(name.toString().toLowerCase())
+		);
+		return currentInfo;
+	} catch (e) {
+		console.log(`Error function filterByName: ${e}`);
+	}
+};
 
 const filterByCategory = async (category) => {
- try {
-     
-     const Id = await Category.findOne({
-         where: {name : category},
-     })
-     console.log(Id.id)
-     const allInfo = await Product.findAll();
-     const filterByCategory = allInfo.filter(el => el.categoryId === Id.id)
- 
-    
-    return filterByCategory.map(el => ({
-        id: el.id,
-        name: el.name,
-        brand: el.brand,
-        image: el.image
-    }));
- } catch (e) {
-    
- }
-}
+	try {
+		const Id = await Category.findOne({
+			where: { name: category }
+		});
+		currentInfo = currentInfo.filter((el) => el.categoryId === Id.id);
+		return currentInfo;
+	} catch (e) {
+		console.log(`Error function filterByCategory: ${e}`);
+	}
+};
 
 const filterByGenre = async (genre) => {
-   try {
-        const allInfo = await Product.findAll();
-        const FilerByGenre = allInfo.filter(e => e.genre === genre)
-        return FilerByGenre.map(el => ({
-            id: el.id,
-            name: el.name,
-            brand: el.brand,
-            image: el.image
-        }));
-   } catch (e) {
-       console.log(e)
-   }
-}
-
+	try {
+		currentInfo = currentInfo.filter((e) =>
+			e.genre.includes(genre.toLowerCase())
+		);
+		return currentInfo;
+	} catch (e) {
+		console.log(`Error function filterByGenre: ${e}`);
+	}
+};
 
 const filterBySize = async (size) => {
-    const AllProducts = await Product.findAll()
-     if(typeof size === "string"){ 
-         const infoFilter = AllProducts.filter(el => el.size.includes(size.toUpperCase()))
-         return infoFilter.map(el => ({
-            id: el.id,
-            name: el.name,
-            brand: el.brand,
-            image: el.image
-        }));
-     }else{ 
-        const infoFilter = AllProducts.filter(el => el.size.includes(ParseInt(size)))
-        return infoFilter.map(el => ({
-            id: el.id,
-            name: el.name,
-            brand: el.brand,
-            image: el.image
-        }));
-}
-}
+	try {
+		if (typeof size === 'string') {
+			currentInfo = currentInfo.filter((e) =>
+				e.size.includes(size.toUpperCase())
+			);
+			return currentInfo;
+		} else {
+			currentInfo = currentInfo.filter((e) => e.size.includes(parseInt(size)));
+			return currentInfo;
+		}
+	} catch (e) {
+		console.log(`Error function filterBySize: ${e}`);
+	}
+};
 
+const filterByBrand = async (brand) => {
+	try {
+		currentInfo = currentInfo.filter((e) =>
+			e.brand.toLowerCase().includes(brand.toLowerCase())
+		);
+		return currentInfo;
+	} catch (e) {
+		console.log(`Error function filterByBrand: ${e}`);
+	}
+};
 
 module.exports = {
-    filterByGenre,
-    filterByCategory,
-    getAllProducts,
-    filterBySize
-}
+	filterByGenre,
+	filterByCategory,
+	getAllProducts,
+	filterBySize,
+	filterByBrand,
+	filterByName
+};

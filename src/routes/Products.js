@@ -1,150 +1,111 @@
 const { Router } = require('express');
-const uuid = require('uuid');
-const { filterByGenre, filterByCategory, getAllProducts, filterBySize } = require('../Controllers');
-const { User, Product, Category } = require('../db');
-// const allInfo = require('./info.json');
-// const { Product, Category } = require('../db.js');
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
+
+const {
+	filterByGenre,
+	filterByCategory,
+	getAllProducts,
+	filterBySize,
+	filterByBrand,
+	filterByName
+} = require('../Controllers');
+const { Product, Category, User } = require('../db.js');
 
 const router = Router();
 
-router.get("/", async (req,res) => {
-  try {
-     const allInfo = await getAllProducts();
-     res.status(200).send(allInfo)
-  } catch (e) {
-     res.status(400).send(e)
-  }
-})
-
-router.get('/genres/:genre', async (req, res) => {
+router.get('/', async (req, res, next) => {
+	const { name, genre, category, size, brand } = req.query;
 	try {
-		const {genre} = req.params
-    if(genre === "hombre" || genre === "mujer"){
-        const info = await filterByGenre(genre)
-           return res.status(200).send(info)
-    }
-    else{
-      const allInfo = await getAllProducts()
-      res.send( allInfo)
-    }
-	    
+		const allProducts = await getAllProducts();
+
+		if (name || genre || category || size || brand) {
+			var info;
+			if (name) {
+				info = await filterByName(name);
+			}
+			if (genre) {
+				info = await filterByGenre(genre);
+			}
+			if (category) {
+				info = await filterByCategory(category);
+			}
+			if (size) {
+				info = await filterBySize(size);
+			}
+			if (brand) {
+				info = await filterByBrand(brand);
+			}
+
+			return res.status(200).send(info);
+		} else {
+			return res.json(allProducts);
+		}
 	} catch (error) {
-		res.status(400).send(error)
+		next(error);
 	}
-	
 });
 
-router.get("/category/:category", async (req,res) => {
+router.get('/:id', async (req, res, next) => {
+	const { id } = req.params;
 	try {
-		const {category} = req.params;
-    if(category === "campera" || category === "calzado" || category === "buzo" || category === "pantalon" || category === "camiseta" ){
-        const info = await filterByCategory(category)
-         return res.status(200).send(info)
-    }
-		else{
-      const allInfo = await getAllProducts()
-      res.send( allInfo)
-    }
-      
-	} catch (e) {
-		res.status(400).send(e)
+		if (id) {
+			let productDetail = await Product.findByPk(id);
+			if (productDetail) {
+				let categoryDb = await Category.findByPk(productDetail.categoryId);
+				const concatProduct = {
+					...productDetail.dataValues,
+					categoryName: categoryDb.name
+				};
+				res.status(200).json(concatProduct);
+			} else {
+				return res.status(200).json({ message: 'ID not found' });
+			}
+		}
+	} catch (error) {
+		next(error);
 	}
-})
-router.get("/size/:size",async (req,res)=>{
-  try {
-        const {size} = req.params;
-        console.log(size)
-        const info = await filterBySize(size);
-        res.send(info)
-
-    
-  } catch (error) {
-    res.status(400).send(error)
-  }
-})
-
-router.get('/:Id',async(req, res,next) => {
-  try {
-    const { Id } = req.params;
-  console.log(Id)
-  if (Id) {
-      let product = await Product.findByPk(Id);
-       let categoryName = await Category.findByPk(product.categoryId)
-        let finalProduct = {
-         name: product.name,
-         brand: product.brand,
-         price: product.price,
-         stock: product.stock,
-         image: product.image,
-         sold:  product.sold,
-         size:  product.size,
-         score: product.score,
-         genre: product.genre,
-         category: categoryName.name,
-         categoryId: product.categoryId
-        }
-        if(product){
-           return res.status(200).json(finalProduct) 
-        }
-        else{
-          return res.send("no encontrado")
-        }
-         
-  } 
-  
-  } catch (error) {
-    res.send(error)
-  }
-})
-router.delete("/delete/:id", async function (req, res) {
-  const { id } = req.params;
-  try {
-    if (id) {
-      await Product.destroy({
-        where: { id: id },
-      });
-      res.send({ msg: "producto eliminado" });
-    }
-  } catch (error) {
-    console.log(error);
-  }
 });
 
+router.delete('/delete/:id', async function (req, res) {
+	const { id } = req.params;
+	try {
+		if (id) {
+			await Product.destroy({
+				where: { id: id }
+			});
+			res.send({ msg: 'producto eliminado' });
+		}
+	} catch (error) {
+		console.log(error);
+	}
+});
 
+router.post('/', async (req, res, next) => {
+	let { name, brand, price, stock, image, sold, size, score, genre, category } =
+		req.body;
+	try {
+		let catId = await Category.findOne({ where: { name: category } });
+		await Product.create({
+			name: name,
+			brand: brand,
+			price: parseFloat(price),
+			stock: parseInt(stock),
+			image: image,
+			sold: parseInt(sold),
+			size: size,
+			score: parseFloat(score),
+			genre: genre,
+			categoryId: catId.id
+		});
+		res.status(200).json({ message: 'New Product Created!' });
+	} catch (e) {
+		next(e);
+	}
+});
 
-router.post('*', async (req, res,next) => {
-  let {
-      name,
-      brand,
-      price,
-      stock,
-      image,
-      sold,
-  size,
-  score,
-  genre
-  } = req.body
-  
-  try {
-  let newProduct= await Product.create({
-      name,
-      brand,
-      price,
-      stock,
-      image,
-      sold,
-  size,
-  score,
-  genre
-  })
-  
-  res.status(200).send("Producto Creado") 
-  } catch (e) {
-      next(e);
-  }
-})
-
+router.put('/change/:id', async (req, res) => {
+	let { name, brand, price, stock, image, sold, size, score, genre, category } =
+		req.body;
+	let { id } = req.params;
+});
 
 module.exports = router;

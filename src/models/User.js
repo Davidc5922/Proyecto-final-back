@@ -1,4 +1,3 @@
-
 const { DataTypes } = require('sequelize');
 // Exportamos una funcion que define el modelo
 // Luego le injectamos la conexion a sequelize.
@@ -13,16 +12,13 @@ module.exports = (sequelize) => {
 				primaryKey: true
 			},
 			name: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			},
 			surname: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			},
 			age: {
-				type: DataTypes.INTEGER,
-				allowNull: false
+				type: DataTypes.INTEGER
 			},
 			email: {
 				type: DataTypes.STRING,
@@ -34,11 +30,17 @@ module.exports = (sequelize) => {
 				allowNull: false
 			},
 			location: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
+			},
+			admin: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false
+			},
+			ban: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false
 			}
 		},
 		{ timestamps: false }
 	);
 };
-
