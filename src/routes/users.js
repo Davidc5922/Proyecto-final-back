@@ -1,26 +1,35 @@
 const { Router } = require('express');
-
-const { findUserByPk } = require('../Controllers/user');
+const { findByName } = require('../Controllers/user');
 const router = Router();
 const { User } = require('../db');
 
-router.post('/', async (req, res, next) => {
-	let { email, password } = req.body;
-	try {
-		if (email && password) {
+
+router.post('/post', async (req, res) => {
+	let { name,username, surname, age, email, password, location } = req.body;
+    	try {
+			const user = await findByName(username); //si ya existe el nombre de usuario debo poner otro
+	 if(user.length){   
+	  return res.status(300).send("el nombre de usuario ya existe, porfavor intenta con otro")
+	 }else{
+		   
 			let UserCreated = await User.create({
 				email,
-				password
+				password,
+				name,
+				surname,
+				username,
+				age,
+				email,
+				location
 			});
-			res.status(200).send(UserCreated);
+			res.status(200).send("usuario creado");
 		}
-
-		// let height=`${heightMin}-${heightMax}`
-		// let weight=`${weightMin}-${weightMax}`
-	} catch (e) {
-		next(e);
-	}
+		} catch (e) {
+			res.send(e)
+		}
 });
+
+
 
 router.put('/ban/:id', async (req, res) => {
 	try {
@@ -36,5 +45,6 @@ router.put('/ban/:id', async (req, res) => {
 		res.status(400).send(e);
 	}
 });
+
 
 module.exports = router;

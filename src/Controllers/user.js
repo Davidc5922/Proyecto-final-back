@@ -1,19 +1,16 @@
 const {User} = require("../db.js");
 
 
-
-const findUserByPk = async (id) => {
-   try {
-       const user = await User.findByPk(id)
-        console.log(user)
-       return user
-   } catch (e) {
-       console.log(e)
-   }
+const findByName = async (name) => {
+    try {
+          const user = await User.findAll({where: {username: name}})
+              return user;
+    } catch (error) {
+        console.log(error)
+    }
 }
 
 
-
 module.exports = {
-    findUserByPk,
+  findByName,
 }

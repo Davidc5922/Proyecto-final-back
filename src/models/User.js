@@ -12,18 +12,26 @@ module.exports = (sequelize) => {
 				primaryKey: true
 			},
 			name: {
-				type: DataTypes.STRING
+				type: DataTypes.STRING,
+				allowNull: false
 			},
 			surname: {
-				type: DataTypes.STRING
+				type: DataTypes.STRING,
+				allowNull: false
 			},
 			age: {
-				type: DataTypes.INTEGER
+				type: DataTypes.INTEGER,
+				allowNull: false
 			},
 			email: {
 				type: DataTypes.STRING,
 				unique: true,
 				allowNull: false
+			},
+			username: {
+				type: DataTypes.STRING,
+				allowNull: false,
+				unique:true
 			},
 			password: {
 				type: DataTypes.STRING,
