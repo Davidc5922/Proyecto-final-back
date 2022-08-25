@@ -19,8 +19,8 @@ module.exports = (sequelize) => {
 				type: DataTypes.STRING,
 				allowNull: false
 			},
-			age: {
-				type: DataTypes.INTEGER,
+			username: {
+				type: DataTypes.STRING,
 				allowNull: false
 			},
 			email: {
@@ -28,14 +28,8 @@ module.exports = (sequelize) => {
 				unique: true,
 				allowNull: false
 			},
-			username: {
-				type: DataTypes.STRING,
-				allowNull: false,
-				unique:true
-			},
-			password: {
-				type: DataTypes.STRING,
-				allowNull: false
+			age: {
+				type: DataTypes.INTEGER
 			},
 			location: {
 				type: DataTypes.STRING

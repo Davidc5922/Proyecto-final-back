@@ -23,7 +23,7 @@ const { PORT } = process.env;
 const { Product } = require('./src/db.js');
 const { preload } = require('./src/Controllers/Products_C.js');
 // Syncing all the models at once.
-conn.sync({ force: false }).then(async () => {
+conn.sync({ force: true }).then(async () => {
 	const allInfo = await Product.findAll();
 	if (!allInfo.length) {
 		await preload();
