@@ -6,7 +6,8 @@ const {
 	getAllProducts,
 	filterBySize,
 	filterByBrand,
-	filterByName
+	filterByName,
+	addCommentToProduct
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
 
@@ -48,24 +49,26 @@ router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		if (id) {
-			let productDetail = await Product.findByPk(id);
+			const productDetail = await Product.findByPk(id);
+
 			if (productDetail) {
 				let sum = 0;
 				let total = 0;
 				let categoryDb = await Category.findByPk(productDetail.categoryId);
-				if (productDetail.qualify) {
-					productDetail.qualify.forEach((e) => {
+
+				if (productDetail.review) {
+					productDetail.review.forEach((e) => {
 						sum += e.number;
 					});
 					total =
-						(sum + productDetail.score) / (productDetail.qualify.length + 1);
+						(sum + productDetail.score) / (productDetail.review.length + 1);
 				} else {
 					total = productDetail.score;
 				}
 
 				const concatProduct = {
 					...productDetail.dataValues,
-					qualify: JSON.parse(productDetail.dataValues.qualify),
+					review: JSON.parse(productDetail.dataValues.review),
 					categoryName: categoryDb.name,
 					average: parseFloat(total.toFixed(1))
 				};

@@ -12,19 +12,27 @@ module.exports = (sequelize) => {
 				primaryKey: true
 			},
 			name: {
-				type: DataTypes.STRING
+				type: DataTypes.STRING,
+				allowNull: false
 			},
 			surname: {
-				type: DataTypes.STRING
+				type: DataTypes.STRING,
+				allowNull: false
 			},
-			age: {
-				type: DataTypes.INTEGER
+			username: {
+				type: DataTypes.STRING,
+				allowNull: false
 			},
 			email: {
 				type: DataTypes.STRING,
 				unique: true,
 				allowNull: false
 			},
+
+			age: {
+				type: DataTypes.INTEGER
+			},
+
 			location: {
 				type: DataTypes.STRING
 			},

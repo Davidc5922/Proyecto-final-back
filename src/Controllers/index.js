@@ -1,5 +1,4 @@
-const e = require('express');
-const { Product, Category } = require('../db');
+const { Product, Category, User } = require('../db');
 var currentInfo;
 
 const getAllProducts = async function () {
@@ -13,7 +12,7 @@ const getAllProducts = async function () {
 			genre: el.genre,
 			categoryId: el.categoryId,
 			size: el.size,
-			brand: el.brand
+			brand: el.brand,
 		}));
 		console.log(currentInfo.length);
 		return currentInfo;
@@ -21,6 +20,8 @@ const getAllProducts = async function () {
 		console.log(`Error function getAllProducts: ${e}`);
 	}
 };
+
+
 const filterByName = async (name) => {
 	try {
 		currentInfo = currentInfo.filter((e) =>
@@ -82,11 +83,23 @@ const filterByBrand = async (brand) => {
 	}
 };
 
+const addCommentToProduct = async (ProductId,UserId)=>{
+    try {
+		const product = await Product.findByPk(ProductId)
+		const user = await User.findByPk(UserId)
+       	return [product,user]
+ 		
+	} catch (e) {
+		console.log(e)
+	}
+}
+
 module.exports = {
 	filterByGenre,
 	filterByCategory,
 	getAllProducts,
 	filterBySize,
 	filterByBrand,
-	filterByName
+	filterByName,
+	addCommentToProduct,
 };
