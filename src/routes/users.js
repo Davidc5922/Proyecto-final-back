@@ -1,4 +1,3 @@
-const bcryptjs = require('bcryptjs');
 const { Router } = require('express');
 const { findByName } = require('../Controllers/user');
 const router = Router();
@@ -7,16 +6,15 @@ const { User } = require('../db');
 
 router.post('/post', async (req, res) => {
 	let { name,username, surname, age, email, password, location } = req.body;
-     let passwordHash = await bcryptjs.hash(password,8)
     	try {
 			const user = await findByName(username); //si ya existe el nombre de usuario debo poner otro
 	 if(user.length){   
 	  return res.status(300).send("el nombre de usuario ya existe, porfavor intenta con otro")
 	 }else{
-		
+		   
 			let UserCreated = await User.create({
 				email,
-				password: passwordHash,
+				password,
 				name,
 				surname,
 				username,
