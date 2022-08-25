@@ -46,6 +46,15 @@ module.exports = (sequelize) => {
 			genre: {
 				type: DataTypes.STRING,
 				allowNull: false
+			},
+			qualify: {
+				type: DataTypes.STRING,
+				get() {
+					return JSON.parse(this.getDataValue('qualify'));
+				},
+				set(val) {
+					return this.setDataValue('qualify', JSON.stringify(val));
+				}
 			}
 		},
 		{ timestamps: false }

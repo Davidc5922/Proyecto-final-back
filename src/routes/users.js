@@ -14,18 +14,14 @@ router.post('/', async (req, res, next) => {
 			});
 			res.status(200).send(UserCreated);
 		}
-
-		// let height=`${heightMin}-${heightMax}`
-		// let weight=`${weightMin}-${weightMax}`
 	} catch (e) {
 		next(e);
 	}
 });
 
-router.put('/ban/:id', async (req, res) => {
+router.put('/ban/:id', async (req, res, next) => {
 	try {
 		const { id } = req.params;
-		console.log(id);
 		let user = await User.findByPk(id);
 		await user.update({
 			...user,
@@ -33,7 +29,7 @@ router.put('/ban/:id', async (req, res) => {
 		});
 		res.send(user);
 	} catch (e) {
-		res.status(400).send(e);
+		next(e);
 	}
 });
 
