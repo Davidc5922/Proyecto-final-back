@@ -43,6 +43,11 @@ module.exports = (sequelize) => {
 			ban: {
 				type: DataTypes.BOOLEAN,
 				defaultValue: false
+			},
+
+			favorite: {
+				type: DataTypes.ARRAY(DataTypes.STRING),
+				defaultValue: []
 			}
 		},
 		{ timestamps: false }
