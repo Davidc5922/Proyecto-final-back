@@ -1,6 +1,5 @@
 const bcryptjs = require('bcryptjs');
 const { Router } = require('express');
-const { password } = require('pg/lib/defaults');
 const { findByName } = require('../Controllers/user');
 const router = Router();
 const { User } = require('../db');
