@@ -4,23 +4,23 @@ const router = Router();
 const { User } = require('../db');
 
 router.post('/post', async (req, res) => {
-	let { name, surname, username, email, age, location } = req.body;
+	let { given_name, family_name, nickname, email } = req.body;
+
 	try {
-		const user = await findByName(username); //si ya existe el nombre de usuario debo poner otro
-		if (user.length) {
+		const user = await User.findOne({ where: { email: email } }); //si ya existe el nombre de usuario debo poner otro
+
+		if (user) {
 			return res
 				.status(300)
 				.send('el nombre de usuario ya existe, porfavor intenta con otro');
 		} else {
-			await User.create({
-				name,
-				surname,
-				username,
-				email,
-				age,
-				location
+			let newUser = await User.create({
+				name: given_name,
+				surname: family_name,
+				username: nickname,
+				email: email
 			});
-			res.status(200).send('User created!!');
+			res.status(200).json(newUser);
 		}
 	} catch (e) {
 		res.send(e);
