@@ -3,16 +3,32 @@ const { findByName } = require('../Controllers/User_C.js');
 const router = Router();
 const { User } = require('../db');
 
+router.get('/user/:email', async (req, res) => {
+	try {
+		const { email } = req.params;
+		const user = await User.findOne({ where: { email: email } });
+		console.log(user);
+		let bool = false;
+
+		if (user) {
+			return res.send(user);
+		} else {
+			return res.send(false);
+		}
+	} catch (e) {
+		console.log(e);
+	}
+});
+
 router.post('/post', async (req, res) => {
 	let { given_name, family_name, nickname, email } = req.body;
 
 	try {
 		const user = await User.findOne({ where: { email: email } }); //si ya existe el nombre de usuario debo poner otro
-
+		console.log(typeof user);
 		if (user) {
-			return res
-				.status(300)
-				.send('el nombre de usuario ya existe, porfavor intenta con otro');
+			console.log(user);
+			return res.status(200).send(user);
 		} else {
 			let newUser = await User.create({
 				name: given_name,
