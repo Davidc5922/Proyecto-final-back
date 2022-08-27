@@ -3,25 +3,31 @@ const { findByName } = require('../Controllers/User_C.js');
 const router = Router();
 const { User } = require('../db');
 
-router.get('/user/:email', async (req, res) => {
+router.get('/', async (req, res, next) => {
 	try {
-		const { email } = req.params;
-		const user = await User.findOne({ where: { email: email } });
-		console.log(user);
-		let bool = false;
-
-		if (user) {
-			return res.send(user);
-		} else {
-			return res.send(false);
-		}
+		let allUsers = await User.findAll();
+		res.send(allUsers);
 	} catch (e) {
-		console.log(e);
+		next(e);
 	}
 });
 
-router.post('/post', async (req, res) => {
-	let { given_name, family_name, nickname, email } = req.body;
+router.get('/:email', async (req, res, next) => {
+	try {
+		const { email } = req.params;
+		const user = await User.findOne({ where: { email: email } });
+		if (user) {
+			return res.status(200).json(user);
+		} else {
+			return res.status(200).json({ message: 'EMAIL not found' });
+		}
+	} catch (e) {
+		next(e);
+	}
+});
+
+router.post('/post', async (req, res, next) => {
+	let { given_name, family_name, nickname, email, picture } = req.body;
 
 	try {
 		const user = await User.findOne({ where: { email: email } }); //si ya existe el nombre de usuario debo poner otro
@@ -31,15 +37,16 @@ router.post('/post', async (req, res) => {
 			return res.status(200).send(user);
 		} else {
 			let newUser = await User.create({
-				name: given_name,
-				surname: family_name,
-				username: nickname,
-				email: email
+				name: given_name ? given_name : 'no tiene nombre',
+				surname: family_name ? family_name : 'no tiene apellido',
+				username: nickname ? nickname : 'no tiene nickname',
+				email: email ? email : 'no tiene email',
+				img: picture ? picture : 'no tiene imagen'
 			});
 			res.status(200).json(newUser);
 		}
 	} catch (e) {
-		res.send(e);
+		next(e);
 	}
 });
 
