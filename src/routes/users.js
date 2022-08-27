@@ -6,22 +6,6 @@ const { User, Product} = require('../db');
 
 
 //USUARIOS
-router.get('/user/:email', async (req, res) => {
-	try {
-		const { email } = req.params;
-		const user = await User.findOne({ where: { email: email } });
-		console.log(user);
-		let bool = false;
-
-		if (user) {
-			return res.send(true);
-		} else {
-			return res.send(false);
-		}
-	} catch (e) {
-		console.log(e);
-	}
-});
 
 router.get('/', async (req, res, next) => {
 	try {
