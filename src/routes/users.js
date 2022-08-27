@@ -3,8 +3,6 @@ const { findByName } = require('../Controllers/User_C.js');
 const router = Router();
 const { User, Product} = require('../db');
 
-
-
 //USUARIOS
 
 router.get('/', async (req, res, next) => {
