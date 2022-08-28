@@ -97,8 +97,18 @@ router.delete('/delete/:id', async function (req, res, next) {
 
 router.post('/', async (req, res, next) => {
 	try {
-		let { name, brand, price, stock, image, sold, size, score, genre } =
-			req.body;
+		let {
+			name,
+			brand,
+			price,
+			stock,
+			image,
+			sold,
+			size,
+			score,
+			genre,
+			category
+		} = req.body;
 		if (
 			name &&
 			brand &&
