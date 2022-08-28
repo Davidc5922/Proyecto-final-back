@@ -55,6 +55,10 @@ module.exports = (sequelize) => {
 				set(val) {
 					return this.setDataValue('review', JSON.stringify(val));
 				}
+			},
+			offer: {
+				type: DataTypes.BOOLEAN,
+				defaultValue: false
 			}
 		},
 		{ timestamps: false }
