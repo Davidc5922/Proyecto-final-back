@@ -39,7 +39,7 @@ router.put('/', async (req, res, next) => {
 						review: [...productDb.review, data[0]]
 					});
 				} else {
-					return res.json({ message: 'You have already voted' });
+					return res.json({ message: 'tu ya haz votado éste producto' });
 				}
 			} else {
 				result = await productDb.update({
@@ -47,7 +47,7 @@ router.put('/', async (req, res, next) => {
 					review: data
 				});
 			}
-			return res.status(200).json(result);
+			return res.status(200).json("comentario agregado");
 		} else {
 			res.status(400).json({ message: 'EMAIL or ID_PRODUCT not found' });
 		}
