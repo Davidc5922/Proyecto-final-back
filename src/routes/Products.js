@@ -97,8 +97,19 @@ router.delete('/delete/:id', async function (req, res, next) {
 
 router.post('/', async (req, res, next) => {
 	try {
-		let { name, brand, price, stock, image, sold, size, score, genre,category } =
-			req.body;
+		let {
+			name,
+			brand,
+			price,
+			stock,
+			image,
+			sold,
+			size,
+			score,
+			genre,
+			offer,
+			category
+		} = req.body;
 		if (
 			name &&
 			brand &&
@@ -122,6 +133,7 @@ router.post('/', async (req, res, next) => {
 				size: size,
 				score: parseFloat(score),
 				genre: genre,
+				offer: offer,
 				categoryId: catId.id
 			});
 			res.status(200).json({ message: 'New Product Created!' });
