@@ -12,12 +12,10 @@ module.exports = (sequelize) => {
 				primaryKey: true
 			},
 			name: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			},
 			surname: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			},
 			username: {
 				type: DataTypes.STRING,
@@ -34,8 +32,19 @@ module.exports = (sequelize) => {
 			age: {
 				type: DataTypes.INTEGER
 			},
-
+			province: {
+				type: DataTypes.STRING
+			},
 			location: {
+				type: DataTypes.STRING
+			},
+			postal: {
+				type: DataTypes.INTEGER
+			},
+			telephone: {
+				type: DataTypes.INTEGER
+			},
+			extra: {
 				type: DataTypes.STRING
 			},
 			admin: {
