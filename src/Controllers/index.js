@@ -13,14 +13,13 @@ const getAllProducts = async function () {
 			categoryId: el.categoryId,
 			size: el.size,
 			brand: el.brand,
+			offer: el.offer
 		}));
-		console.log(currentInfo.length);
 		return currentInfo;
 	} catch (e) {
 		console.log(`Error function getAllProducts: ${e}`);
 	}
 };
-
 
 const filterByName = async (name) => {
 	try {
@@ -83,16 +82,15 @@ const filterByBrand = async (brand) => {
 	}
 };
 
-const addCommentToProduct = async (ProductId,UserId)=>{
-    try {
-		const product = await Product.findByPk(ProductId)
-		const user = await User.findByPk(UserId)
-       	return [product,user]
- 		
+const addCommentToProduct = async (ProductId, UserId) => {
+	try {
+		const product = await Product.findByPk(ProductId);
+		const user = await User.findByPk(UserId);
+		return [product, user];
 	} catch (e) {
-		console.log(e)
+		console.log(e);
 	}
-}
+};
 
 module.exports = {
 	filterByGenre,
@@ -101,5 +99,5 @@ module.exports = {
 	filterBySize,
 	filterByBrand,
 	filterByName,
-	addCommentToProduct,
+	addCommentToProduct
 };
