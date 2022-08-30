@@ -1496,7 +1496,7 @@
 		"stock": 25,
 		"sold": 15,
 		"score": 1.5,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/605546-800-auto?v=637959250857000000&width=800&height=auto&aspect=true"
 	},
@@ -1508,7 +1508,7 @@
 		"stock": 15,
 		"sold": 6,
 		"score": 3.5,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/591413-800-auto?v=637937754886230000&width=800&height=auto&aspect=true"
 	},
@@ -1568,7 +1568,7 @@
 		"stock": 5,
 		"sold": 15,
 		"score": 4,
-		"size": ["XS", "S", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "S", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/496242-800-auto?v=637727735670600000&width=800&height=auto&aspect=true"
 	},
@@ -1592,7 +1592,7 @@
 		"stock": 12,
 		"sold": 4,
 		"score": 2.1,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/560660-800-auto?v=637886683678800000&width=800&height=auto&aspect=true"
 	},
@@ -1604,7 +1604,7 @@
 		"stock": 19,
 		"sold": 11,
 		"score": 4.1,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/523765-800-auto?v=637802963216700000&width=800&height=auto&aspect=true"
 	},
@@ -1616,7 +1616,7 @@
 		"stock": 12,
 		"sold": 13,
 		"score": 4.6,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/514412-800-auto?v=637787028258700000&width=800&height=auto&aspect=true"
 	},
@@ -1652,7 +1652,7 @@
 		"stock": 10,
 		"sold": 6,
 		"score": 3.2,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/570280-800-auto?v=637907420225000000&width=800&height=auto&aspect=true"
 	},
@@ -1664,7 +1664,7 @@
 		"stock": 16,
 		"sold": 3,
 		"score": 2.2,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/561619-800-auto?v=637891602165530000&width=800&height=auto&aspect=true"
 	},
@@ -1676,7 +1676,7 @@
 		"stock": 16,
 		"sold": 5,
 		"score": 2.9,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/558794-800-auto?v=637883197912400000&width=800&height=auto&aspect=true"
 	},
@@ -1700,7 +1700,7 @@
 		"stock": 29,
 		"sold": 1,
 		"score": 1.5,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/454336-800-auto?v=637632685078500000&width=800&height=auto&aspect=true"
 	},
@@ -1724,7 +1724,7 @@
 		"stock": 5,
 		"sold": 6,
 		"score": 2.2,
-		"size": ["XS", "M", "L", "XL", "XXL", "XL", "XXL"],
+		"size": ["XS", "M", "L", "XL", "XXL"],
 		"genre": "mujer",
 		"image": "https://essential.vtexassets.com/arquivos/ids/353427-800-auto?v=637363853337170000&width=800&height=auto&aspect=true"
 	},
