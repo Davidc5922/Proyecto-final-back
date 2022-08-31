@@ -12,8 +12,7 @@ let sequelize =
 				host: DB_HOST,
 				port: 5432,
 				username: DB_USER,
-				password:
-					DB_PASSWORD,
+				password: DB_PASSWORD,
 				pool: {
 					max: 3,
 					min: 1,
@@ -58,7 +57,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Product, Buy, Category, Score } = sequelize.models;
+const { User, Product, Buy, Category, Review } = sequelize.models;
 
 // Aca vendrian las relaciones
 
@@ -71,11 +70,11 @@ Buy.belongsToMany(Product, { through: 'Products_Buys' });
 Category.hasMany(Product);
 Product.belongsTo(Category);
 
-User.hasMany(Score);
-Score.belongsTo(User);
+User.hasMany(Review);
+Review.belongsTo(User);
 
-Product.hasMany(Score);
-Score.belongsTo(Product);
+Product.hasMany(Review);
+Review.belongsTo(Product);
 
 module.exports = {
 	...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { findByName } = require('../Controllers/User_C.js');
 const router = Router();
-const { User, Product} = require('../db');
+const { User, Product } = require('../db');
 
 //USUARIOS
 
@@ -29,7 +29,7 @@ router.get('/:email', async (req, res, next) => {
 });
 
 router.post('/post', async (req, res, next) => {
-	let { given_name, family_name, nickname, email, picture } = req.body;
+	let { nickname, email, picture } = req.body;
 
 	try {
 		const user = await User.findOne({ where: { email: email } }); //si ya existe el nombre de usuario debo poner otro
@@ -39,14 +39,47 @@ router.post('/post', async (req, res, next) => {
 			return res.status(200).send(user);
 		} else {
 			let newUser = await User.create({
-				name: given_name ? given_name : 'no tiene nombre',
-				surname: family_name ? family_name : 'no tiene apellido',
 				username: nickname ? nickname : 'no tiene nickname',
 				email: email ? email : 'no tiene email',
 				img: picture ? picture : 'no tiene imagen'
 			});
 			res.status(200).json(newUser);
 		}
+	} catch (e) {
+		next(e);
+	}
+});
+
+router.put('/update/:id', async (req, res, next) => {
+	try {
+		const {
+			username,
+			name,
+			surname,
+			img,
+			age,
+			province,
+			location,
+			postal,
+			telephone,
+			extra
+		} = req.body;
+		const { id } = req.params;
+		let user = await User.findByPk(id);
+		await user.update({
+			...user,
+			username: username ? username : user.username,
+			name: name ? name : user.name,
+			surname: surname ? surname : user.surname,
+			img: img ? img : user.img,
+			age: age ? age : user.age,
+			province: province ? province : user.province,
+			location: location ? location : user.location,
+			postal: postal ? parseInt(postal) : user.postal,
+			telephone: telephone ? parseInt(telephone) : user.telephone,
+			extra: extra ? extra : user.extra
+		});
+		res.send(user);
 	} catch (e) {
 		next(e);
 	}
@@ -67,21 +100,19 @@ router.put('/ban/:id', async (req, res, next) => {
 });
 
 //FAVORITOS
-router.get('/favorite/:id', async (req,res) => {
-try {
-	const {id} = req.params
-	 const user = await User.findByPk(id);
-	 res.send(user.favorite.map(e => JSON.parse(e))) 
-} catch (e) {
-	console.log(e)
-}
-})
-
-
-
-router.put('/favorite/', async (req,res) => {
+router.get('/favorite/:id', async (req, res) => {
 	try {
-		const {idP,idU} = req.body;
+		const { id } = req.params;
+		const user = await User.findByPk(id);
+		res.send(user.favorite.map((e) => JSON.parse(e)));
+	} catch (e) {
+		console.log(e);
+	}
+});
+
+router.put('/favorite/', async (req, res) => {
+	try {
+		const { idP, idU } = req.body;
 		const product = await Product.findByPk(idP);
 		const user = await User.findByPk(idU);
 		let productObject = {
@@ -89,42 +120,41 @@ router.put('/favorite/', async (req,res) => {
 			name: product.name,
 			image: product.image,
 			price: product.price
-		}
-        
-	    let filterProducts = user.favorite.filter(e => JSON.parse(e).id === idP);
+		};
+
+		let filterProducts = user.favorite.filter((e) => JSON.parse(e).id === idP);
 		//compruebo si el producto que queremos agregar, ya está en la seccion de fav
-         
-		if(!filterProducts.length){
-           await user.update({
-			...user,
-			favorite: [...user.favorite, productObject],
-		   })
-          return res.send(user)
-		}else{
-         res.send("el producto ya está en favoritos")
+
+		if (!filterProducts.length) {
+			await user.update({
+				...user,
+				favorite: [...user.favorite, productObject]
+			});
+			return res.send(user);
+		} else {
+			res.send('el producto ya está en favoritos');
 		}
-	} catch (e) {
-		console.log(e)
-	}
-})
-
-router.delete('/favorite', async (req,res) => {
-	try {
-		const {idP,idU} = req.body;
-		const user = await User.findByPk(idU);
-		const filterProducts = user.favorite.filter(e => JSON.parse(e).id !== idP)
-        const usermod = 	await user.update({
-			...user,
-			favorite: filterProducts,
-		})
-       res.send(usermod)
-
 	} catch (e) {
 		console.log(e);
 	}
-})
+});
 
-
+router.delete('/favorite', async (req, res) => {
+	try {
+		const { idP, idU } = req.body;
+		const user = await User.findByPk(idU);
+		const filterProducts = user.favorite.filter(
+			(e) => JSON.parse(e).id !== idP
+		);
+		const usermod = await user.update({
+			...user,
+			favorite: filterProducts
+		});
+		res.send(usermod);
+	} catch (e) {
+		console.log(e);
+	}
+});
 
 module.exports = router;
 /* 

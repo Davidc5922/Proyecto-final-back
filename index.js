@@ -29,6 +29,6 @@ conn.sync({ force: false }).then(async () => {
 		await preload();
 	}
 	server.listen(PORT, () => {
-		console.log(`%s listening at ${process.env.PORT}`); // eslint-disable-line no-console
+		console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
 	});
 });
