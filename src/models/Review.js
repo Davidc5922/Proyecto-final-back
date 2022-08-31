@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize');
 module.exports = (sequelize) => {
 	// defino el modelo
 	sequelize.define(
-		'score',
+		'review',
 		{
 			id: {
 				type: DataTypes.UUID,
@@ -14,10 +14,10 @@ module.exports = (sequelize) => {
 			data: {
 				type: DataTypes.STRING,
 				get() {
-					return JSON.parse(this.getDataValue('number'));
+					return JSON.parse(this.getDataValue('data'));
 				},
 				set(val) {
-					return this.setDataValue('number', JSON.stringify(val));
+					return this.setDataValue('data', JSON.stringify(val));
 				}
 			}
 		},

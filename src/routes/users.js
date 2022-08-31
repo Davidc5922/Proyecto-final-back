@@ -72,7 +72,7 @@ router.put('/update/:id', async (req, res, next) => {
 			name: name ? name : user.name,
 			surname: surname ? surname : user.surname,
 			img: img ? img : user.img,
-			age: age ? parseInt(age) : user.age,
+			age: age ? age : user.age,
 			province: province ? province : user.province,
 			location: location ? location : user.location,
 			postal: postal ? parseInt(postal) : user.postal,
