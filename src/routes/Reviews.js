@@ -1,19 +1,7 @@
 const { Router } = require('express');
-const { Product, Category, User, Review } = require('../db.js');
+const { Product, User, Review } = require('../db.js');
 
 const router = Router();
-
-router.get('/', async (req, res, next) => {
-	try {
-		let allUsers = await Score.findAll({
-			attributes: ['number']
-		});
-		console.log(allUsers[0].number[0].name);
-		return res.status(200).send(allUsers[0].number[0].name);
-	} catch (e) {
-		next(e);
-	}
-});
 
 router.post('/create', async (req, res, next) => {
 	try {
