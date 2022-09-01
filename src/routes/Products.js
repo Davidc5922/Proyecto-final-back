@@ -8,7 +8,7 @@ const {
 	filterByBrand,
 	filterByName
 } = require('../Controllers');
-const { Product, Category, User } = require('../db.js');
+const { Product, Category, User, Review } = require('../db.js');
 
 const router = Router();
 
@@ -48,27 +48,51 @@ router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		if (id) {
-			const productDetail = await Product.findByPk(id);
-
+			const productDetail = await Product.findByPk(id, { include: Review });
+			// console.log(productDetail);
 			if (productDetail) {
 				let sum = 0;
 				let total = 0;
+				let aux = [];
 				let categoryDb = await Category.findByPk(productDetail.categoryId);
-
-				if (productDetail.review) {
-					productDetail.review.forEach((e) => {
-						sum += e.number;
+				let userComments = await User.findAll({
+					attributes: ['email'],
+					include: {
+						model: Review,
+						where: { productId: id },
+						required: true
+					}
+				});
+				console.log(userComments);
+				if (userComments.length) {
+					userComments.reviews.forEach((e) => {
+						sum += e.data.number;
+						aux.push({
+							// email: e.email,
+							number: e.data.number,
+							comment: e.data.comment
+						});
 					});
 					total =
-						(sum + productDetail.score) / (productDetail.review.length + 1);
+						(sum + productDetail.score) / (userComments.reviews.length + 1);
 				} else {
 					total = productDetail.score;
 				}
+				// if (productDetail.review) {
+				// 	productDetail.review.forEach((e) => {
+				// 		sum += e.number;
+				// 	});
+				// 	total =
+				// 		(sum + productDetail.score) / (productDetail.review.length + 1);
+				// } else {
+				// 	total = productDetail.score;
+				// }
 
 				const concatProduct = {
 					...productDetail.dataValues,
-					review: JSON.parse(productDetail.dataValues.review),
 					categoryName: categoryDb.name,
+					// review: JSON.parse(productDetail.dataValues.review),
+					comments: aux,
 					average: parseFloat(total.toFixed(1))
 				};
 				res.status(200).json(concatProduct);
