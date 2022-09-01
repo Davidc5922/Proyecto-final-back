@@ -18,8 +18,7 @@ router.get('/:email', async (req, res, next) => {
 	try {
 		const { email } = req.params;
 		const user = await User.findOne({
-			where: { email: email },
-			include: Review
+			where: { email: email }
 		});
 		if (user) {
 			return res.status(200).json(user);
