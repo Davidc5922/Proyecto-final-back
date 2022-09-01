@@ -1,21 +1,22 @@
 const { Router } = require('express');
-const mercadopago = require("mercadopago");
-require("dotenv").config();
+const mercadopago = require('mercadopago');
+require('dotenv').config();
 
 mercadopago.configure({
-    access_token: "APP_USR-7262929329049314-083112-618a2487d51780282e7c007859e9dc37-408019538",
-  });
+	access_token:
+		'APP_USR-7262929329049314-083112-618a2487d51780282e7c007859e9dc37-408019538'
+});
 
 module.exports = {
-    mercadopago,
-}
+	mercadopago
+};
 const {
 	filterByGenre,
 	filterByCategory,
 	getAllProducts,
 	filterBySize,
 	filterByBrand,
-	filterByName,
+	filterByName
 	//PayToProduct
 } = require('../Controllers');
 const { Product, Category, User } = require('../db.js');
@@ -58,27 +59,51 @@ router.get('/:id', async (req, res, next) => {
 	const { id } = req.params;
 	try {
 		if (id) {
-			const productDetail = await Product.findByPk(id);
-
+			const productDetail = await Product.findByPk(id, { include: Review });
+			// console.log(productDetail);
 			if (productDetail) {
 				let sum = 0;
 				let total = 0;
+				let aux = [];
 				let categoryDb = await Category.findByPk(productDetail.categoryId);
-
-				if (productDetail.review) {
-					productDetail.review.forEach((e) => {
-						sum += e.number;
+				let userComments = await User.findAll({
+					attributes: ['email'],
+					include: {
+						model: Review,
+						where: { productId: id },
+						required: true
+					}
+				});
+				console.log(userComments);
+				if (userComments.length) {
+					userComments.reviews.forEach((e) => {
+						sum += e.data.number;
+						aux.push({
+							// email: e.email,
+							number: e.data.number,
+							comment: e.data.comment
+						});
 					});
 					total =
-						(sum + productDetail.score) / (productDetail.review.length + 1);
+						(sum + productDetail.score) / (userComments.reviews.length + 1);
 				} else {
 					total = productDetail.score;
 				}
+				// if (productDetail.review) {
+				// 	productDetail.review.forEach((e) => {
+				// 		sum += e.number;
+				// 	});
+				// 	total =
+				// 		(sum + productDetail.score) / (productDetail.review.length + 1);
+				// } else {
+				// 	total = productDetail.score;
+				// }
 
 				const concatProduct = {
 					...productDetail.dataValues,
-					review: JSON.parse(productDetail.dataValues.review),
 					categoryName: categoryDb.name,
+					// review: JSON.parse(productDetail.dataValues.review),
+					comments: aux,
 					average: parseFloat(total.toFixed(1))
 				};
 				res.status(200).json(concatProduct);
@@ -196,43 +221,39 @@ router.put('/change/:id', async (req, res, next) => {
 	}
 });
 
-router.post("/comprar/:id", async (req,res) => {
-	const id = req.params.id
+router.post('/comprar/:id', async (req, res) => {
+	const id = req.params.id;
 	// const obj = req.body
 	// const uwu = {
 	// 	...obj,
 	// 	id: id
 	// }
 	const datos = req.body;
-	const producto = await Product.findByPk(id)
-	console.log(datos)
-	console.log(producto.toJSON())
+	const producto = await Product.findByPk(id);
+	console.log(datos);
+	console.log(producto.toJSON());
 	// res.send(producto)
-		let preference = {
-		 items: [
-			 {
-			   name: producto.name,
-			//    price: producto.price,
-			//    picture_url: producto.image,
-			//    category_id:  producto.id,
-			   quantity: 1,
-			   unit_price: producto.price
-			 }
-		    ],
-			back_urls: {
-				"success": "http://localhost:3000/feedback",
-				"failure": "http://localhost:3000/feedback",
-				"pending": "http://localhost:3000/feedback"
-			},
-			auto_return: "approved",
-		} 
+	let preference = {
+		items: [
+			{
+				name: producto.name,
+				//    price: producto.price,
+				//    picture_url: producto.image,
+				//    category_id:  producto.id,
+				quantity: 1,
+				unit_price: producto.price
+			}
+		],
+		back_urls: {
+			success: 'http://localhost:3000/feedback',
+			failure: 'http://localhost:3000/feedback',
+			pending: 'http://localhost:3000/feedback'
+		},
+		auto_return: 'approved'
+	};
 	const response = await mercadopago.preferences.create(preference);
-	const preferenceId = response.body.id
-	res.send(preferenceId)
-	
+	const preferenceId = response.body.id;
+	res.send(preferenceId);
+});
 
-  
- })
-
- 
 module.exports = router;
