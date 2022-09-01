@@ -118,6 +118,7 @@ router.post('/', async (req, res, next) => {
 			score,
 			genre,
 			offer,
+			discount,
 			category
 		} = req.body;
 		if (
@@ -144,6 +145,7 @@ router.post('/', async (req, res, next) => {
 				score: parseFloat(score),
 				genre: genre,
 				offer: offer,
+				discount: discount,
 				categoryId: catId.id
 			});
 			res.status(200).json({ message: 'New Product Created!' });
