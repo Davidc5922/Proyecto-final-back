@@ -59,6 +59,10 @@ module.exports = (sequelize) => {
 			offer: {
 				type: DataTypes.BOOLEAN,
 				defaultValue: false
+			},
+			discount: {
+				type: DataTypes.STRING,
+				defaultValue: false
 			}
 		},
 		{ timestamps: false }
