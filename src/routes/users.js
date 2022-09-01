@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const { findByName } = require('../Controllers/User_C.js');
 const router = Router();
-const { User, Product } = require('../db');
+const { User, Product, Review } = require('../db');
 
 //USUARIOS
 
@@ -17,7 +17,9 @@ router.get('/', async (req, res, next) => {
 router.get('/:email', async (req, res, next) => {
 	try {
 		const { email } = req.params;
-		const user = await User.findOne({ where: { email: email } });
+		const user = await User.findOne({
+			where: { email: email }
+		});
 		if (user) {
 			return res.status(200).json(user);
 		} else {

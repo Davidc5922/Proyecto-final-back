@@ -13,7 +13,8 @@ const getAllProducts = async function () {
 			categoryId: el.categoryId,
 			size: el.size,
 			brand: el.brand,
-			offer: el.offer
+			offer: el.offer,
+			discount: el.discount
 		}));
 		return currentInfo;
 	} catch (e) {
