@@ -73,9 +73,8 @@ router.get('/:id', async (req, res, next) => {
 						required: true
 					}
 				});
-				console.log(Array.isArray(userComments));
 				if (userComments?.length) {
-					userComments.forEach((e, i) => {
+					userComments.forEach((e) => {
 						sum += e.reviews[0].data[0].number;
 						aux.push({
 							email: e.email,
