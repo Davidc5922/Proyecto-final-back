@@ -126,26 +126,13 @@ router.post('/', async (req, res, next) => {
 			price,
 			stock,
 			image,
-			sold,
 			size,
-			score,
 			genre,
 			offer,
 			discount,
 			category
 		} = req.body;
-		if (
-			name &&
-			brand &&
-			price &&
-			stock &&
-			image &&
-			sold &&
-			size &&
-			score &&
-			genre &&
-			category
-		) {
+		if (name && brand && price && stock && image && size && genre && category) {
 			let catId = await Category.findOne({ where: { name: category } });
 			await Product.create({
 				name: name,
@@ -153,9 +140,7 @@ router.post('/', async (req, res, next) => {
 				price: parseFloat(price),
 				stock: parseInt(stock),
 				image: image,
-				sold: parseInt(sold),
 				size: size,
-				score: parseFloat(score),
 				genre: genre,
 				offer: offer,
 				discount: discount,
