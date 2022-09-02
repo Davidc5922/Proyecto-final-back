@@ -173,37 +173,22 @@ router.post('/', async (req, res, next) => {
 router.put('/change/:id', async (req, res, next) => {
 	try {
 		let { id } = req.params;
-		let { name, brand, price, stock, image, sold, size, score, genre } =
+		const { price, stock, image, sold, size, score, genre, offer, discount } =
 			req.body;
-		if (
-			id &&
-			name &&
-			brand &&
-			price &&
-			stock &&
-			image &&
-			sold &&
-			size &&
-			score &&
-			genre
-		) {
-			let product = await Product.findByPk(id);
-			await product.update({
-				...product,
-				name: name,
-				brand: brand,
-				price: parseFloat(price),
-				stock: parseInt(stock),
-				image: image,
-				sold: parseInt(sold),
-				size: size,
-				score: parseFloat(score),
-				genre: genre
-			});
-			res.status(200).json({ message: 'Successfully modified product!' });
-		} else {
-			res.status(400).json({ message: 'Error could not modify the product!' });
-		}
+		let product = await Product.findByPk(id);
+		await product.update({
+			...product,
+			price: parseFloat(price),
+			stock: parseInt(stock),
+			image: image,
+			sold: parseInt(sold),
+			size: size,
+			score: parseFloat(score),
+			genre: genre,
+			offer: offer,
+			discount: discount ? discount : false
+		});
+		res.status(200).json({ message: 'Successfully modified product!' });
 	} catch (e) {
 		next(e);
 	}
