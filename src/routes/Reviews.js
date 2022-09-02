@@ -3,6 +3,18 @@ const { Product, User, Review } = require('../db.js');
 
 const router = Router();
 
+router.delete('/delete/:id', async (req, res, next) => {
+	try {
+		const { id } = req.params;
+		await Review.destroy({
+			where: { id: id }
+		});
+		res.send({ msg: 'review eliminada' });
+	} catch (e) {
+		next(e);
+	}
+});
+
 router.post('/create', async (req, res, next) => {
 	try {
 		const { email, idProduct, number, comment } = req.body;

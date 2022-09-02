@@ -5,13 +5,23 @@ const { User, Product, Review } = require("../db");
 
 //USUARIOS
 
-router.get("/", async (req, res, next) => {
-  try {
-    let allUsers = await User.findAll();
-    res.send(allUsers);
-  } catch (e) {
-    next(e);
-  }
+
+router.get('/', async (req, res, next) => {
+	try {
+		const { email } = req.query;
+		let allUsers = await User.findAll();
+		if (email) {
+			let filterEmail = allUsers.filter((e) =>
+				e.email.toLowerCase().includes(email.toString().toLowerCase())
+			);
+			return res.send(filterEmail);
+		} else {
+			return res.send(allUsers);
+		}
+	} catch (e) {
+		next(e);
+	}
+
 });
 
 router.get("/:email", async (req, res, next) => {
