@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
 			},
 			sold: {
 				type: DataTypes.INTEGER,
-				allowNull: false
+				defaultValue: 0
 			},
 			size: {
 				type: DataTypes.ARRAY(DataTypes.STRING),
@@ -41,7 +41,7 @@ module.exports = (sequelize) => {
 			},
 			score: {
 				type: DataTypes.FLOAT,
-				allowNull: false
+				defaultValue: 0
 			},
 			genre: {
 				type: DataTypes.STRING,
@@ -61,7 +61,7 @@ module.exports = (sequelize) => {
 				defaultValue: false
 			},
 			discount: {
-                type: DataTypes.STRING,
+				type: DataTypes.STRING,
 				defaultValue: false
 			}
 		},
