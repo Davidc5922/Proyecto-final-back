@@ -1,3 +1,4 @@
+const e = require('express');
 const { Router } = require('express');
 const mercadopago = require("mercadopago");
 require("dotenv").config();
@@ -195,30 +196,65 @@ router.put('/change/:id', async (req, res, next) => {
 		next(e);
 	}
 });
+router.post("/comprar/", async (req,res) => {
+		const productsId = req.body.id;
+         const ProductsFilter = [];
+		 const allProducts = await getAllProducts()
+
+          const filterById = (id) =>{
+            const product = allProducts.filter(e => e.id == id)
+			 return product
+		  } 
+	       productsId.map(e => {
+			  let product = filterById(e)
+			   ProductsFilter.push(product)
+		   })
+		
+
+		let preference = {
+			items: [],
+			//    payer: {
+			//    	name: datos.name,
+			//        surname: datos.surname,
+			//        email: datos.email
+			//      },
+			   back_urls: {
+				   "success": "http://localhost:3000/feedback",
+				   "failure": "http://localhost:3000/feedback",
+				   "pending": "http://localhost:3000/feedback"
+			   },
+			   auto_return: "approved",
+		   } 
+		   ProductsFilter.flat(1).map(e => preference.items.push({
+			title: e.name,
+			unit_price: e.price,
+			picture_url: e.image,
+			quantity: 1,
+		 }))
+		
+	   const response = await mercadopago.preferences.create(preference);
+       const preferenceId = response.body.id
+	   res.send(preferenceId)
+ })
 
 router.post("/comprar/:id", async (req,res) => {
 	const id = req.params.id
-	// const obj = req.body
-	// const uwu = {
-	// 	...obj,
-	// 	id: id
-	// }
-	const datos = req.body;
+	if(id){
 	const producto = await Product.findByPk(id)
-	console.log(datos)
-	console.log(producto.toJSON())
-	// res.send(producto)
 		let preference = {
 		 items: [
 			 {
-			   name: producto.name,
-			//    price: producto.price,
-			//    picture_url: producto.image,
-			//    category_id:  producto.id,
-			   quantity: 1,
-			   unit_price: producto.price
+				picture_url: producto.image,
+				title: producto.name,
+				unit_price: producto.price,
+			    quantity: 1,
 			 }
 		    ],
+			// payer: {
+			// 	name: datos.name,
+            //     surname: datos.surname,
+            //     email: datos.email
+			//   },
 			back_urls: {
 				"success": "http://localhost:3000/feedback",
 				"failure": "http://localhost:3000/feedback",
@@ -229,9 +265,7 @@ router.post("/comprar/:id", async (req,res) => {
 	const response = await mercadopago.preferences.create(preference);
 	const preferenceId = response.body.id
 	res.send(preferenceId)
-	
-
-  
+	}
  })
 
  
