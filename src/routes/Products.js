@@ -212,7 +212,7 @@ let preference = {
        const preferenceId = response.body.id
 	   res.send(preferenceId)
  })
- 
+
 router.post("/comprar/:id", async (req,res) => {
 	const id = req.params.id
 	if(id){
