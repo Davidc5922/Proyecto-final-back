@@ -7,8 +7,16 @@ const { User, Product, Review } = require('../db');
 
 router.get('/', async (req, res, next) => {
 	try {
+		const { email } = req.query;
 		let allUsers = await User.findAll();
-		res.send(allUsers);
+		if (email) {
+			let filterEmail = allUsers.filter((e) =>
+				e.email.toLowerCase().includes(email.toString().toLowerCase())
+			);
+			return res.send(filterEmail);
+		} else {
+			return res.send(allUsers);
+		}
 	} catch (e) {
 		next(e);
 	}

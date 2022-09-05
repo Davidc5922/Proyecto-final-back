@@ -1,3 +1,4 @@
+const e = require('express');
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
 require('dotenv').config();
@@ -126,26 +127,13 @@ router.post('/', async (req, res, next) => {
 			price,
 			stock,
 			image,
-			sold,
 			size,
-			score,
 			genre,
 			offer,
 			discount,
 			category
 		} = req.body;
-		if (
-			name &&
-			brand &&
-			price &&
-			stock &&
-			image &&
-			sold &&
-			size &&
-			score &&
-			genre &&
-			category
-		) {
+		if (name && brand && price && stock && image && size && genre && category) {
 			let catId = await Category.findOne({ where: { name: category } });
 			await Product.create({
 				name: name,
@@ -153,9 +141,7 @@ router.post('/', async (req, res, next) => {
 				price: parseFloat(price),
 				stock: parseInt(stock),
 				image: image,
-				sold: parseInt(sold),
 				size: size,
-				score: parseFloat(score),
 				genre: genre,
 				offer: offer,
 				discount: discount,
@@ -173,75 +159,88 @@ router.post('/', async (req, res, next) => {
 router.put('/change/:id', async (req, res, next) => {
 	try {
 		let { id } = req.params;
-		let { name, brand, price, stock, image, sold, size, score, genre } =
+		const { price, stock, image, sold, size, score, genre, offer, discount } =
 			req.body;
-		if (
-			id &&
-			name &&
-			brand &&
-			price &&
-			stock &&
-			image &&
-			sold &&
-			size &&
-			score &&
-			genre
-		) {
-			let product = await Product.findByPk(id);
-			await product.update({
-				...product,
-				name: name,
-				brand: brand,
-				price: parseFloat(price),
-				stock: parseInt(stock),
-				image: image,
-				sold: parseInt(sold),
-				size: size,
-				score: parseFloat(score),
-				genre: genre
-			});
-			res.status(200).json({ message: 'Successfully modified product!' });
-		} else {
-			res.status(400).json({ message: 'Error could not modify the product!' });
-		}
+		let product = await Product.findByPk(id);
+		await product.update({
+			...product,
+			price: parseFloat(price),
+			stock: parseInt(stock),
+			image: image,
+			sold: parseInt(sold),
+			size: size,
+			score: parseFloat(score),
+			genre: genre,
+			offer: offer,
+			discount: discount ? discount : false
+		});
+		res.status(200).json({ message: 'Successfully modified product!' });
 	} catch (e) {
 		next(e);
 	}
 });
+router.post("/comprar/", async (req,res) => {
+		const productsToBuy = req.body;
+     
+let preference = {
+			items: [],
+			//    payer: {
+			//    	name: datos.name,
+			//        surname: datos.surname,
+			//        email: datos.email
+			//      },
+			   back_urls: {
+				   "success": "http://localhost:3000/Checkout",
+				   "failure": "http://localhost:3000/Checkout",
+				   "pending": "http://localhost:3000/Checkout"
+			   },
+			   auto_return: "approved",
+		   } 
 
-router.post('/comprar/:id', async (req, res) => {
-	const id = req.params.id;
-	// const obj = req.body
-	// const uwu = {
-	// 	...obj,
-	// 	id: id
-	// }
-	const datos = req.body;
-	const producto = await Product.findByPk(id);
-	console.log(datos);
-	console.log(producto.toJSON());
-	// res.send(producto)
-	let preference = {
-		items: [
-			{
-				name: producto.name,
-				//    price: producto.price,
-				//    picture_url: producto.image,
-				//    category_id:  producto.id,
+		productsToBuy.map((e) => {
+			if (e[1].id) {
+			  e[1].stock--;
+			  preference.items.push({
+				title: e[1].name,
+				unit_price: e[1].price,
 				quantity: 1,
-				unit_price: producto.price
+			  });
 			}
-		],
-		back_urls: {
-			success: 'http://localhost:3000/feedback',
-			failure: 'http://localhost:3000/feedback',
-			pending: 'http://localhost:3000/feedback'
-		},
-		auto_return: 'approved'
-	};
-	const response = await mercadopago.preferences.create(preference);
-	const preferenceId = response.body.id;
-	res.send(preferenceId);
-});
+		  });
 
+	   const response = await mercadopago.preferences.create(preference);
+       const preferenceId = response.body.id
+	   res.send(preferenceId)
+ })
+
+router.post("/comprar/:id", async (req,res) => {
+	const id = req.params.id
+	if(id){
+	const producto = await Product.findByPk(id)
+		let preference = {
+		 items: [
+			 {
+				picture_url: producto.image,
+				title: producto.name,
+				unit_price: producto.price,
+			    quantity: 1,
+			 }
+		    ],
+			// payer: {
+			// 	name: datos.name,
+            //     surname: datos.surname,
+            //     email: datos.email
+			//   },
+			back_urls: {
+				"success": "http://localhost:3000/Checkout",
+				"failure": "http://localhost:3000/Checkout",
+				"pending": "http://localhost:3000/Checkout"
+			},
+			auto_return: "approved",
+		} 
+	const response = await mercadopago.preferences.create(preference);
+	const preferenceId = response.body.id
+	res.send(preferenceId)
+	}
+ })
 module.exports = router;
