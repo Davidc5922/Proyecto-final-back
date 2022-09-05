@@ -190,9 +190,9 @@ let preference = {
 			//        email: datos.email
 			//      },
 			   back_urls: {
-				   "success": "http://localhost:3000/feedback",
-				   "failure": "http://localhost:3000/feedback",
-				   "pending": "http://localhost:3000/feedback"
+				   "success": "http://localhost:3000/Checkout",
+				   "failure": "http://localhost:3000/Checkout",
+				   "pending": "http://localhost:3000/Checkout"
 			   },
 			   auto_return: "approved",
 		   } 
@@ -232,9 +232,9 @@ router.post("/comprar/:id", async (req,res) => {
             //     email: datos.email
 			//   },
 			back_urls: {
-				"success": "http://localhost:3000/feedback",
-				"failure": "http://localhost:3000/feedback",
-				"pending": "http://localhost:3000/feedback"
+				"success": "http://localhost:3000/Checkout",
+				"failure": "http://localhost:3000/Checkout",
+				"pending": "http://localhost:3000/Checkout"
 			},
 			auto_return: "approved",
 		} 
