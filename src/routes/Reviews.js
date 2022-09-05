@@ -39,9 +39,9 @@ router.post('/create', async (req, res, next) => {
 				userId: userDb.id,
 				productId: idProduct
 			});
-			return res.send(newReview);
+			return res.send("comentario agregado con éxito");
 		} else {
-			res.status(400).json({ message: 'EMAIL or ID_PRODUCT not found' });
+			res.status(400).json({ message: 'EMAIL o ID_PRODUCT no encontrado' });
 		}
 	} catch (e) {
 		next(e);
