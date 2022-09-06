@@ -12,12 +12,10 @@ module.exports = (sequelize) => {
 				primaryKey: true
 			},
 			name: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			},
 			surname: {
-				type: DataTypes.STRING,
-				allowNull: false
+				type: DataTypes.STRING
 			},
 			username: {
 				type: DataTypes.STRING,
@@ -28,12 +26,26 @@ module.exports = (sequelize) => {
 				unique: true,
 				allowNull: false
 			},
-
+			img: {
+				type: DataTypes.STRING
+			},
 			age: {
+				type: DataTypes.DATEONLY,
+				defaultValue: DataTypes.NOW
+			},
+			province: {
+				type: DataTypes.STRING
+			},
+			location: {
+				type: DataTypes.STRING
+			},
+			postal: {
 				type: DataTypes.INTEGER
 			},
-
-			location: {
+			telephone: {
+				type: DataTypes.INTEGER
+			},
+			extra: {
 				type: DataTypes.STRING
 			},
 			admin: {
@@ -43,6 +55,11 @@ module.exports = (sequelize) => {
 			ban: {
 				type: DataTypes.BOOLEAN,
 				defaultValue: false
+			},
+
+			favorite: {
+				type: DataTypes.ARRAY(DataTypes.STRING),
+				defaultValue: []
 			}
 		},
 		{ timestamps: false }
