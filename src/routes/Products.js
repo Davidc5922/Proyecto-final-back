@@ -198,9 +198,13 @@ let preference = {
 			   auto_return: "approved",
 		   } 
 
-		productsToBuy.map((e) => {
+		productsToBuy.map(async (e) => {
 			if (e[1].id) {
-			  e[1].stock--;
+              let product = await Product.findByPk(e[1].id)
+			  await product.update({
+				  ...product,
+				 stock: product.stock--
+			  })
 			  preference.items.push({
 				title: e[1].name,
 				unit_price: e[1].price,
