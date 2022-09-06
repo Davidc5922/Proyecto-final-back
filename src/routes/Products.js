@@ -78,7 +78,7 @@ router.get('/:id', async (req, res, next) => {
 					userComments.forEach((e) => {
 						sum += e.reviews[0].data[0].number;
 						aux.push({
-						        id: e.id,
+							id: e.id,
 							email: e.email,
 							username: e.username,
 							number: e.reviews[0].data[0].number,
@@ -180,68 +180,68 @@ router.put('/change/:id', async (req, res, next) => {
 		next(e);
 	}
 });
-router.post("/comprar/", async (req,res) => {
-		const productsToBuy = req.body;
-     
-let preference = {
-			items: [],
-			//    payer: {
-			//    	name: datos.name,
-			//        surname: datos.surname,
-			//        email: datos.email
-			//      },
-			   back_urls: {
-				   "success": "http://localhost:3000/Checkout",
-				   "failure": "http://localhost:3000/Checkout",
-				   "pending": "http://localhost:3000/Checkout"
-			   },
-			   auto_return: "approved",
-		   } 
+router.post('/comprar/', async (req, res) => {
+	const productsToBuy = req.body;
 
-		productsToBuy.map((e) => {
-			if (e[1].id) {
-			  e[1].stock--;
-			  preference.items.push({
+	let preference = {
+		items: [],
+		//    payer: {
+		//    	name: datos.name,
+		//        surname: datos.surname,
+		//        email: datos.email
+		//      },
+		back_urls: {
+			success: 'http://localhost:3000/Checkout',
+			failure: 'http://localhost:3000/Checkout',
+			pending: 'http://localhost:3000/Checkout'
+		},
+		auto_return: 'approved'
+	};
+
+	productsToBuy.map((e) => {
+		if (e[1].id) {
+			e[1].stock--;
+			preference.items.push({
 				title: e[1].name,
 				unit_price: e[1].price,
-				quantity: 1,
-			  });
-			}
-		  });
+				quantity: 1
+			});
+		}
+	});
 
-	   const response = await mercadopago.preferences.create(preference);
-       const preferenceId = response.body.id
-	   res.send(preferenceId)
- })
+	const response = await mercadopago.preferences.create(preference);
+	const preferenceId = response.body.id;
+	res.send(preferenceId);
+});
 
-router.post("/comprar/:id", async (req,res) => {
-	const id = req.params.id
-	if(id){
-	const producto = await Product.findByPk(id)
+router.post('/comprar/:id', async (req, res) => {
+	const id = req.params.id;
+	if (id) {
+		const producto = await Product.findByPk(id);
 		let preference = {
-		 items: [
-			 {
-				picture_url: producto.image,
-				title: producto.name,
-				unit_price: producto.price,
-			    quantity: 1,
-			 }
-		    ],
+			items: [
+				{
+					picture_url: producto.image,
+					title: producto.name,
+					unit_price: producto.price,
+					quantity: 1
+				}
+			],
 			// payer: {
 			// 	name: datos.name,
-            //     surname: datos.surname,
-            //     email: datos.email
+			//     surname: datos.surname,
+			//     email: datos.email
 			//   },
 			back_urls: {
-				"success": "http://localhost:3000/Checkout",
-				"failure": "http://localhost:3000/Checkout",
-				"pending": "http://localhost:3000/Checkout"
+				success: 'http://localhost:3000/Checkout',
+				failure: 'http://localhost:3000/Checkout',
+				pending: 'http://localhost:3000/Checkout'
 			},
-			auto_return: "approved",
-		} 
-	const response = await mercadopago.preferences.create(preference);
-	const preferenceId = response.body.id
-	res.send(preferenceId)
+			auto_return: 'approved'
+		};
+		const response = await mercadopago.preferences.create(preference);
+		const preferenceId = response.body.id;
+		res.send(preferenceId);
 	}
- })
+});
 module.exports = router;
