@@ -78,6 +78,7 @@ router.get('/:id', async (req, res, next) => {
 					userComments.forEach((e) => {
 						sum += e.reviews[0].data[0].number;
 						aux.push({
+						        id: e.id,
 							email: e.email,
 							username: e.username,
 							number: e.reviews[0].data[0].number,
