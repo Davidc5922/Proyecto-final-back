@@ -1,7 +1,18 @@
 const e = require('express');
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
-require('dotenv').config();
+
+require("dotenv").config();
+let BASE_URL
+const host = {DB_HOST}
+if(host==="localhost"){
+	 BASE_URL = "http://localhost:3000/Checkout"
+}else{
+	BASE_URL = "https://proyecto-final-front-70fx4z1ei-juan-jose-horisberger.vercel.app/Checkout"
+}
+
+
+
 
 mercadopago.configure({
 	access_token:
@@ -190,6 +201,11 @@ let preference = {
 			//        surname: datos.surname,
 			//        email: datos.email
 			//      },
+			   back_urls: {
+				   "success": BASE_URL,
+				   "failure": BASE_URL,
+				   "pending": BASE_URL
+			   },
 			   auto_return: "approved",
 		   } 
 
@@ -227,6 +243,11 @@ router.post("/comprar/:id", async (req,res) => {
             //     surname: datos.surname,
             //     email: datos.email
 			//   },
+			back_urls: {
+				"success": BASE_URL,
+				"failure": BASE_URL,
+				"pending": BASE_URL
+			},
 			auto_return: "approved",
 		} 
 	const response = await mercadopago.preferences.create(preference);
