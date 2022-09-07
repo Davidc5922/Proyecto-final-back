@@ -218,10 +218,6 @@ router.post('/comprar/:id', async (req, res) => {
 	const id = req.params.id;
 	if (id) {
 		const producto = await Product.findByPk(id);
-		if (producto.stock > 0) {
-			producto.sold++;
-			producto.stock--;
-		}
 		let preference = {
 			items: [
 				{
