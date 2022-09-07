@@ -199,7 +199,7 @@ let preference = {
 		   } 
 		   productsToBuy.map(async(e) => {
 			if (e[2].id) {
-			 let product = await Product.findByPk(e[2][0])
+			 let product = await Product.findByPk(e[2].id)
 			  await product.update({
 				 ...product,
 				 stock: product.stock--,
