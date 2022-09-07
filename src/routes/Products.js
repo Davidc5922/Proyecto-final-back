@@ -4,7 +4,7 @@ const mercadopago = require('mercadopago');
 
 require("dotenv").config();
 let BASE_URL
-const host = {DB_HOST}
+const host = {DB_HOST} = process.env
 if(host==="localhost"){
 	 BASE_URL = "http://localhost:3000/Checkout"
 }else{
