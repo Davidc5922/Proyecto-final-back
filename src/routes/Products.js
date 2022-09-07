@@ -190,15 +190,10 @@ let preference = {
 			//        surname: datos.surname,
 			//        email: datos.email
 			//      },
-			   back_urls: {
-				   "success": "http://localhost:3000/Cart",
-				   "failure": "http://localhost:3000/Cart",
-				   "pending": "http://localhost:3000/Cart"
-			   },
 			   auto_return: "approved",
 		   } 
 
-		productsToBuy.map(async (e) => {
+		productsToBuy.map((e) => {
 			if (e[1].id) {
 			  e[1].stock--;
 			  preference.items.push({
@@ -207,13 +202,6 @@ let preference = {
 				quantity: 1,
 			  });
 			}
-			let product = await Product.findByPk(e[1].id)
-			    await product.update({
-					...product,
-					stock: product.stock--,
-					sold: product.sold++
-				})
-
 		  });
 
 	   const response = await mercadopago.preferences.create(preference);
@@ -239,11 +227,6 @@ router.post("/comprar/:id", async (req,res) => {
             //     surname: datos.surname,
             //     email: datos.email
 			//   },
-			back_urls: {
-				"success": "http://localhost:3000/Checkout",
-				"failure": "http://localhost:3000/Checkout",
-				"pending": "http://localhost:3000/Checkout"
-			},
 			auto_return: "approved",
 		} 
 	const response = await mercadopago.preferences.create(preference);
