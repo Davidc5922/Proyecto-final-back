@@ -198,8 +198,8 @@ let preference = {
 			   auto_return: "approved",
 		   } 
 		   productsToBuy.map(async(e) => {
-			if (e[1].id) {
-			 let product = await Product.findByPk(e[1].id)
+			if (e[2].id) {
+			 let product = await Product.findByPk(e[2][0])
 			  await product.update({
 				 ...product,
 				 stock: product.stock--,
