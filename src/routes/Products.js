@@ -1,7 +1,18 @@
 const e = require('express');
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
-require('dotenv').config();
+
+require("dotenv").config();
+let BASE_URL
+const host = {DB_HOST} = process.env
+if(host==="localhost"){
+	 BASE_URL = "http://localhost:3000/Checkout"
+}else{
+	BASE_URL = "https://proyecto-final-front-70fx4z1ei-juan-jose-horisberger.vercel.app/Checkout"
+}
+
+
+
 
 mercadopago.configure({
 	access_token:
@@ -191,23 +202,24 @@ router.put('/change/:id', async (req, res, next) => {
 		next(e);
 	}
 });
-router.post('/comprar/', async (req, res) => {
-	const productsToBuy = req.body;
 
-	let preference = {
-		items: [],
-		//    payer: {
-		//    	name: datos.name,
-		//        surname: datos.surname,
-		//        email: datos.email
-		//      },
-		back_urls: {
-			success: 'http://localhost:3000/Checkout',
-			failure: 'http://localhost:3000/Checkout',
-			pending: 'http://localhost:3000/Checkout'
-		},
-		auto_return: 'approved'
-	};
+router.post("/comprar/", async (req,res) => {
+		const productsToBuy = req.body;
+     
+let preference = {
+			items: [],
+			//    payer: {
+			//    	name: datos.name,
+			//        surname: datos.surname,
+			//        email: datos.email
+			//      },
+			   back_urls: {
+				   "success": BASE_URL,
+				   "failure": BASE_URL,
+				   "pending": BASE_URL
+			   },
+			   auto_return: "approved",
+		   } 
 
 	productsToBuy.map((e) => {
 		if (e[1].id) {
@@ -244,9 +256,9 @@ router.post('/comprar/:id', async (req, res) => {
 			//     email: datos.email
 			//   },
 			back_urls: {
-				success: 'http://localhost:3000/Checkout',
-				failure: 'http://localhost:3000/Checkout',
-				pending: 'http://localhost:3000/Checkout'
+				"success": BASE_URL,
+				"failure": BASE_URL,
+				"pending": BASE_URL
 			},
 			auto_return: 'approved'
 		};
