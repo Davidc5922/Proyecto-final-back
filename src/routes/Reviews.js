@@ -21,7 +21,8 @@ router.get('/', async (req, res, next) => {
 					email: e.email,
 					username: e.username,
 					comment: e.reviews[0].data[0].comment,
-					commentId: e.reviews[0].id
+					commentId: e.reviews[0].id,
+					productId: e.reviews[0].productId
 				});
 			});
 		}
