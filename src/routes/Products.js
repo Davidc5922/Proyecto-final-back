@@ -78,7 +78,7 @@ router.get('/:id', async (req, res, next) => {
 					userComments.forEach((e) => {
 						sum += e.reviews[0].data[0].number;
 						aux.push({
-						        id: e.id,
+						    id: e.id,
 							email: e.email,
 							username: e.username,
 							number: e.reviews[0].data[0].number,
@@ -197,14 +197,19 @@ let preference = {
 			   },
 			   auto_return: "approved",
 		   } 
-
-		productsToBuy.map(async (e) => {
+		   productsToBuy.map(async(e) => {
 			if (e[1].id) {
-              let product = await Product.findByPk(e[1].id)
+			 let product = await Product.findByPk(e[1].id)
 			  await product.update({
-				  ...product,
-				 stock: product.stock--
-			  })
+				 ...product,
+				 stock: product.stock--,
+				 sold: product.sold++,
+			 })
+			}
+		  });
+		productsToBuy.map((e) => {
+			if (e[1].id) {
+			  e[1].stock--;
 			  preference.items.push({
 				title: e[1].name,
 				unit_price: e[1].price,
