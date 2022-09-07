@@ -160,11 +160,22 @@ router.post('/', async (req, res, next) => {
 router.put('/change/:id', async (req, res, next) => {
 	try {
 		let { id } = req.params;
-		const { price, stock, image, sold, size, score, genre, offer, discount } =
-			req.body;
+		const {
+			name,
+			price,
+			stock,
+			image,
+			sold,
+			size,
+			score,
+			genre,
+			offer,
+			discount
+		} = req.body;
 		let product = await Product.findByPk(id);
 		await product.update({
 			...product,
+			name: name,
 			price: parseFloat(price),
 			stock: parseInt(stock),
 			image: image,
