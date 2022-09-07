@@ -3,6 +3,34 @@ const { Product, User, Review } = require('../db.js');
 
 const router = Router();
 
+router.get('/', async (req, res, next) => {
+	try {
+		let allComments = [];
+		let userComments = await User.findAll({
+			attributes: ['id', 'email', 'username'],
+			include: {
+				model: Review,
+				required: true
+			}
+		});
+
+		if (userComments?.length) {
+			userComments.forEach((e) => {
+				allComments.push({
+					id: e.id,
+					email: e.email,
+					username: e.username,
+					comment: e.reviews[0].data[0].comment,
+					commentId: e.reviews[0].id
+				});
+			});
+		}
+		res.status(200).json(allComments);
+	} catch (e) {
+		next(e);
+	}
+});
+
 router.delete('/delete/:id', async (req, res, next) => {
 	try {
 		const { id } = req.params;
@@ -39,7 +67,7 @@ router.post('/create', async (req, res, next) => {
 				userId: userDb.id,
 				productId: idProduct
 			});
-			return res.send("comentario agregado con éxito");
+			return res.send('comentario agregado con éxito');
 		} else {
 			res.status(400).json({ message: 'EMAIL o ID_PRODUCT no encontrado' });
 		}
