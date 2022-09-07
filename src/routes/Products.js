@@ -191,23 +191,14 @@ let preference = {
 			//        email: datos.email
 			//      },
 			   back_urls: {
-				   "success": "http://localhost:3000/Checkout",
-				   "failure": "http://localhost:3000/Checkout",
-				   "pending": "http://localhost:3000/Checkout"
+				   "success": "http://localhost:3000/Cart",
+				   "failure": "http://localhost:3000/Cart",
+				   "pending": "http://localhost:3000/Cart"
 			   },
 			   auto_return: "approved",
 		   } 
-		   productsToBuy.map(async(e) => {
-			if (e[2].id) {
-			 let product = await Product.findByPk(e[2].id)
-			  await product.update({
-				 ...product,
-				 stock: product.stock--,
-				 sold: product.sold++,
-			 })
-			}
-		  });
-		productsToBuy.map((e) => {
+
+		productsToBuy.map(async (e) => {
 			if (e[1].id) {
 			  e[1].stock--;
 			  preference.items.push({
@@ -216,6 +207,13 @@ let preference = {
 				quantity: 1,
 			  });
 			}
+			let product = await Product.findByPk(e[1].id)
+			    await product.update({
+					...product,
+					stock: product.stock--,
+					sold: product.sold++
+				})
+
 		  });
 
 	   const response = await mercadopago.preferences.create(preference);
