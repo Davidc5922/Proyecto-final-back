@@ -60,6 +60,21 @@ router.post('/post', async (req, res, next) => {
 	}
 });
 
+router.put("/admin/:id", async (req, res, next) => {
+	try {
+	  const { id } = req.params;
+	  let user = await User.findByPk(id);
+	  await user.update({
+		...user,
+		admin: user.admin === false ? true : false,
+	  });
+	  res.send(user);
+	} catch (e) {
+	  next(e);
+	}
+  });
+  
+
 router.put('/update/:id', async (req, res, next) => {
 	try {
 		const {
