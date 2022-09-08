@@ -8,7 +8,7 @@ const host = {DB_HOST} = process.env
 if(host==="localhost"){
 	 BASE_URL = "http://localhost:3000/Checkout"
 }else{
-	BASE_URL = "https://proyecto-final-front-70fx4z1ei-juan-jose-horisberger.vercel.app/Checkout"
+	BASE_URL = "https://gaed-jm-dusky.vercel.app/Checkout"
 }
 
 
@@ -89,6 +89,7 @@ router.get('/:id', async (req, res, next) => {
 					userComments.forEach((e) => {
 						sum += e.reviews[0].data[0].number;
 						aux.push({
+							id: e.id,
 							email: e.email,
 							username: e.username,
 							number: e.reviews[0].data[0].number,
