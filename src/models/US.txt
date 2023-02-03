@@ -1,0 +1,15 @@
+US1 - Como USUARIO voy a poder acceder a un listado de los productos
+US2 - como USUARIO, voy a tener la posibilidad de registrarme vía Google "Continue with Google".
+US3 - como USUARIO tener la posibilidad de realizar una búsqueda de un producto
+US4 - Como USUARIO voy a tener la posibilidad de filtrar por genero "hombre/mujer"
+US5 - Como USUARIO voy a tener la posibilidad de filtrar por categoría "Indumentaria"
+
+
+US1 - Como USUARIO, voy a poder ACCEDER a un listado de los productos.
+US2 - Como USUARIO, voy a poder VER los detalles de un producto en particular.
+US3 - Como USUARIO, puedo BUCAR una prenda X desde la barra de búsqueda.
+US4 - Como USUARIO, voy a poder FILTRAR por tipo de prenda.
+US5 - Como USUARIO, voy a poder FILTRAR genero.
+US6 - Darle la posibilidad a el USUARIO a que pueda ir modificando la pagina en la cual esta
+US7 - Crear un componente que me permita agregar un producto nuevo a la pagina
+US8 - Deploy del back
