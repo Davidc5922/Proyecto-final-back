@@ -1,7 +1,18 @@
 const e = require('express');
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
-require('dotenv').config();
+
+require("dotenv").config();
+let BASE_URL
+const host = {DB_HOST} = process.env
+if(host==="localhost"){
+	 BASE_URL = "http://localhost:3000/Checkout"
+}else{
+	BASE_URL = "https://gaed-jm-dusky.vercel.app/Checkout"
+}
+
+
+
 
 mercadopago.configure({
 	access_token:
@@ -78,7 +89,7 @@ router.get('/:id', async (req, res, next) => {
 					userComments.forEach((e) => {
 						sum += e.reviews[0].data[0].number;
 						aux.push({
-						        id: e.id,
+							id: e.id,
 							email: e.email,
 							username: e.username,
 							number: e.reviews[0].data[0].number,
@@ -160,11 +171,22 @@ router.post('/', async (req, res, next) => {
 router.put('/change/:id', async (req, res, next) => {
 	try {
 		let { id } = req.params;
-		const { price, stock, image, sold, size, score, genre, offer, discount } =
-			req.body;
+		const {
+			name,
+			price,
+			stock,
+			image,
+			sold,
+			size,
+			score,
+			genre,
+			offer,
+			discount
+		} = req.body;
 		let product = await Product.findByPk(id);
 		await product.update({
 			...product,
+			name: name,
 			price: parseFloat(price),
 			stock: parseInt(stock),
 			image: image,
@@ -180,6 +202,7 @@ router.put('/change/:id', async (req, res, next) => {
 		next(e);
 	}
 });
+
 router.post("/comprar/", async (req,res) => {
 		const productsToBuy = req.body;
      
@@ -191,57 +214,57 @@ let preference = {
 			//        email: datos.email
 			//      },
 			   back_urls: {
-				   "success": "http://localhost:3000/Checkout",
-				   "failure": "http://localhost:3000/Checkout",
-				   "pending": "http://localhost:3000/Checkout"
+				   "success": BASE_URL,
+				   "failure": BASE_URL,
+				   "pending": BASE_URL
 			   },
 			   auto_return: "approved",
 		   } 
 
-		productsToBuy.map((e) => {
-			if (e[1].id) {
-			  e[1].stock--;
-			  preference.items.push({
+	productsToBuy.map((e) => {
+		if (e[1].id) {
+			e[1].stock--;
+			preference.items.push({
 				title: e[1].name,
 				unit_price: e[1].price,
-				quantity: 1,
-			  });
-			}
-		  });
+				quantity: 1
+			});
+		}
+	});
 
-	   const response = await mercadopago.preferences.create(preference);
-       const preferenceId = response.body.id
-	   res.send(preferenceId)
- })
+	const response = await mercadopago.preferences.create(preference);
+	const preferenceId = response.body.id;
+	res.send(preferenceId);
+});
 
-router.post("/comprar/:id", async (req,res) => {
-	const id = req.params.id
-	if(id){
-	const producto = await Product.findByPk(id)
+router.post('/comprar/:id', async (req, res) => {
+	const id = req.params.id;
+	if (id) {
+		const producto = await Product.findByPk(id);
 		let preference = {
-		 items: [
-			 {
-				picture_url: producto.image,
-				title: producto.name,
-				unit_price: producto.price,
-			    quantity: 1,
-			 }
-		    ],
+			items: [
+				{
+					picture_url: producto.image,
+					title: producto.name,
+					unit_price: producto.price,
+					quantity: 1
+				}
+			],
 			// payer: {
 			// 	name: datos.name,
-            //     surname: datos.surname,
-            //     email: datos.email
+			//     surname: datos.surname,
+			//     email: datos.email
 			//   },
 			back_urls: {
-				"success": "http://localhost:3000/Checkout",
-				"failure": "http://localhost:3000/Checkout",
-				"pending": "http://localhost:3000/Checkout"
+				"success": BASE_URL,
+				"failure": BASE_URL,
+				"pending": BASE_URL
 			},
-			auto_return: "approved",
-		} 
-	const response = await mercadopago.preferences.create(preference);
-	const preferenceId = response.body.id
-	res.send(preferenceId)
+			auto_return: 'approved'
+		};
+		const response = await mercadopago.preferences.create(preference);
+		const preferenceId = response.body.id;
+		res.send(preferenceId);
 	}
- })
+});
 module.exports = router;
