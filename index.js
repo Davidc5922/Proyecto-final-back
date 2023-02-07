@@ -19,7 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
-const { PORT } = process.env;
+const PORT = process.env.PORT || 3000;
 const { Product } = require('./src/db.js');
 const { preload } = require('./src/Controllers/Products_C.js');
 // Syncing all the models at once.
