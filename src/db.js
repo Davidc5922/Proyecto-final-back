@@ -1,36 +1,26 @@
 require("dotenv").config();
-const { Sequelize } = require("sequelize");
+const {Sequelize} = require("sequelize");
 const fs = require("fs");
 const path = require("path");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV = "" } = process.env;
+const {DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, NODE_ENV = ""} = process.env;
 
-let sequelize =
-  NODE_ENV === "production"
-    ? new Sequelize(process.env.DATABASE_URL, {
-        database: DB_NAME,
-        dialect: "postgres",
-        host: DB_HOST,
-        port: 5432,
-        username: DB_USER,
-        password: DB_PASSWORD,
-        pool: {
-          max: 3,
-          min: 1,
-          idle: 10000,
-        },
-        dialectOptions: {
-          ssl: {
-            require: true,
-            rejectUnauthorized: false,
-          },
-          keepAlive: true,
-        },
-        ssl: true,
-      })
-    : new Sequelize(
-        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-        { logging: false, native: false }
-      );
+let sequelize = new Sequelize.Sequelize(
+  "gaedatabase",
+  "gaeduser",
+  "Tsubasa12345",
+  {
+    host: "proyecto-final-database.ccwb3jesmh0z.us-east-1.rds.amazonaws.com",
+    ssl: true,
+    dialect: "postgres",
+    logging: false,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
+  }
+);
 
 const basename = path.basename(__filename);
 const modelDefiners = [];
@@ -56,15 +46,15 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { User, Product, Buy, Category, Review } = sequelize.models;
+const {User, Product, Buy, Category, Review} = sequelize.models;
 
 // Aca vendrian las relaciones
 
 User.hasMany(Buy);
 Buy.belongsTo(User);
 
-Product.belongsToMany(Buy, { through: "Products_Buys" });
-Buy.belongsToMany(Product, { through: "Products_Buys" });
+Product.belongsToMany(Buy, {through: "Products_Buys"});
+Buy.belongsToMany(Product, {through: "Products_Buys"});
 
 Category.hasMany(Product);
 Product.belongsTo(Category);
