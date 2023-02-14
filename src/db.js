@@ -6,12 +6,12 @@ const {
 	DB_USER,
 	DB_PASSWORD,
 	DB_HOST,
-	PORT,
+	DB_PORT,
 	DB_NAME,
 	NODE_ENV = ''
 } = process.env;
 
-let sequelize =
+const sequelize =
 	// NODE_ENV === 'production'
 	// 	? new Sequelize(process.env.DATABASE_URL, {
 	// 			database: DB_NAME,
@@ -36,7 +36,7 @@ let sequelize =
 	// 	  })
 	// 	:
 	new Sequelize(
-		`postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${PORT}/${DB_NAME}`,
+		`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
 		{ logging: false, native: false }
 	);
 
