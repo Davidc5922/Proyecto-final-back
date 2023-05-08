@@ -8,7 +8,7 @@ const host = {DB_HOST} = process.env
 if(host==="localhost"){
 	 BASE_URL = "http://localhost:3000/Checkout"
 }else{
-	BASE_URL = "https://gaed-jm-dusky.vercel.app/Checkout"
+	BASE_URL = "https://gaedjm.vercel.app/Checkout"
 }
 
 
