@@ -43,9 +43,7 @@ router.post('/post', async (req, res, next) => {
 
 	try {
 		const user = await User.findOne({ where: { email: email } }); //si ya existe el nombre de usuario debo poner otro
-		console.log(typeof user);
 		if (user) {
-			console.log(user);
 			return res.status(200).send(user);
 		} else {
 			let newUser = await User.create({
@@ -182,13 +180,3 @@ router.delete('/favorite', async (req, res) => {
 });
 
 module.exports = router;
-/* 
-{
-    "name": "Alexander",
-    "surname": "Cañete",
-    "username": "chaque1111",
-    "email": "alexandercaete@gmail.com",
-    "age": "18",
-    "location": "capitan solari, chaco Argentina"
-} 
-*/

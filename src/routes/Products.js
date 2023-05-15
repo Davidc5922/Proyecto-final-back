@@ -1,6 +1,7 @@
 const e = require('express');
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
+const { ACCESS_TOKEN } = process.env;
 
 require("dotenv").config();
 let BASE_URL
@@ -15,8 +16,7 @@ if(host==="localhost"){
 
 
 mercadopago.configure({
-	access_token:
-		'APP_USR-7262929329049314-083112-618a2487d51780282e7c007859e9dc37-408019538'
+	access_token: ACCESS_TOKEN
 });
 
 module.exports = {
