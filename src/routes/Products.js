@@ -1,6 +1,7 @@
 const e = require('express');
 const { Router } = require('express');
 const mercadopago = require('mercadopago');
+const { ACCESS_TOKEN } = process.env;
 
 require("dotenv").config();
 let BASE_URL
