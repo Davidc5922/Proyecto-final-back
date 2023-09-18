@@ -1,5 +1,6 @@
+const axios = require("axios");
 const { Product, Category } = require('../db.js');
-const allInfo = require('../routes/info.json');
+// const allInfo = require('../routes/info.json');
 
 const preload = async () => {
 	let categories = [
@@ -11,7 +12,8 @@ const preload = async () => {
 	];
 	await Category.bulkCreate(categories);
 
-	allInfo.forEach(async (p) => {
+	const allData = await axios.get("https://apimocha.com/gaedjm/products");
+	allData.data.forEach(async (p) => {
 		let categoryDb = await Category.findOne({
 			where: { name: p.category }
 		});
